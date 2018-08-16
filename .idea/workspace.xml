@@ -5,79 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25608b04-2f7a-45cc-ba21-5dc843d88d3e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/1a5fdd62-166c-45e6-94ec-00769b7b2868/_metadata_/metadata" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/1a5fdd62-166c-45e6-94ec-00769b7b2868/_metadata_/metadata.keystream" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/1a5fdd62-166c-45e6-94ec-00769b7b2868/_metadata_/metadata.keystream.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/1a5fdd62-166c-45e6-94ec-00769b7b2868/_metadata_/metadata.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/1a5fdd62-166c-45e6-94ec-00769b7b2868/_metadata_/metadata_i" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/1a5fdd62-166c-45e6-94ec-00769b7b2868/_metadata_/metadata_i.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/1a5fdd62-166c-45e6-94ec-00769b7b2868/_src_/schema/sys.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/verify/bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/verify/fullbg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/BilibiliSpider.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/1a5fdd62-166c-45e6-94ec-00769b7b2868.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/1a5fdd62-166c-45e6-94ec-00769b7b2868/storage.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Shinelon.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/cookie/DedeUserID" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/cookie/DedeUserID__ckMd5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/cookie/LIVE_BUVID" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/cookie/SESSDATA" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/cookie/UM_distinctid" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/cookie/_dfcaptcha" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/cookie/bili_jct" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/cookie/bp_t_offset_5281936" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/cookie/buvid3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/cookie/finger" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/cookie/fts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/cookie/sid" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/exports/bilibili.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/extensions.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/items.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/map/defaults.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/map/tag.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/middlewares.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/mixins.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/old_version/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/old_version/bili.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/old_version/items.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/old_version/webdriver_pools.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/pipelines.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/scripts.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/settings.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/spiders/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/utils/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/utils/bloom_filter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/utils/metrics.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/verify/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/verify/crack.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BilibiliSpider/verify/model.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exec.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scrapy.cfg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scrapy_redis/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scrapy_redis/connection.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scrapy_redis/defaults.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scrapy_redis/dupefilter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scrapy_redis/picklecompat.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scrapy_redis/pipelines.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scrapy_redis/queue.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scrapy_redis/scheduler.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scrapy_redis/spiders.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scrapy_redis/utils.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/setup.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/getIp.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/ghostdriver.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/selenium_spider.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/yundama_requests.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -139,12 +69,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="364">
-                <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+              <first_editor relative-caret-position="174">
+                <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -152,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-400">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="182">
+              <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -268,6 +198,7 @@
       <find>200</find>
       <find>5762360f</find>
       <find>1378</find>
+      <find>cryptography</find>
     </findStrings>
     <dirStrings>
       <dir>G:\virtualenv\py3scrapy\BilibiliSpider\BilibiliSpider\map</dir>
@@ -321,8 +252,8 @@
         <option value="$PROJECT_DIR$/BilibiliSpider/mixins.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
         <option value="$PROJECT_DIR$/tools/yundama_requests.py" />
-        <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -546,13 +477,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35147393" sideWeight="0.5064378" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33219954" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1802721" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19098713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1081,22 +1013,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="364">
-            <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-            <folding />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-400">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="174">
+            <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
