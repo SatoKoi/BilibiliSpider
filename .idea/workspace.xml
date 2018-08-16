@@ -5,9 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25608b04-2f7a-45cc-ba21-5dc843d88d3e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/items.py" afterPath="$PROJECT_DIR$/BilibiliSpider/items.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" afterPath="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/utils/metrics.py" afterPath="$PROJECT_DIR$/BilibiliSpider/utils/metrics.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/.idea/Bibibili.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bibibili/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bibibili/settings.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bibibili/urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bibibili/wsgi.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/admin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/apps.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0001_initial.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0002_auto_20180810_2208.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0003_auto_20180810_2214.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0004_videoorarticle_is_video_or_article.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0005_videoorarticle_cover_img_url.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0006_auto_20180811_1705.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0007_auto_20180811_1707.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0008_article_img_box.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0009_auto_20180813_1012.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0010_auto_20180813_1113.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0011_auto_20180813_1124.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0012_auto_20180813_1136.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0013_auto_20180813_1136.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0014_category_code.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0015_auto_20180813_1630.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0016_auto_20180813_1834.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0017_auto_20180814_2044.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0018_auto_20180814_2052.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0019_auto_20180814_2234.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0020_auto_20180814_2244.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0021_auto_20180814_2247.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0022_auto_20180815_1645.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0023_remove_person_play_game_list.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0024_auto_20180815_2256.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0025_auto_20180815_2302.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/db_tool/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/db_tool/data/category_data.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/db_tool/data/data.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/db_tool/data/data1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/db_tool/import_category_data.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/db_tool/import_child_category_data.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/manage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/mixins.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-944">
-              <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+              <caret line="3" column="5" lean-forward="false" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -74,8 +120,8 @@
       <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="217" column="128" lean-forward="false" selection-start-line="217" selection-start-column="128" selection-end-line="217" selection-end-column="128" />
+            <state relative-caret-position="720">
+              <caret line="213" column="45" lean-forward="false" selection-start-line="213" selection-start-column="45" selection-end-line="213" selection-end-column="45" />
               <folding>
                 <marker date="1534414632416" expanded="true" signature="861:1011" ph="insert into Bili_tag... " />
                 <marker date="1534414632416" expanded="true" signature="861:1040" ph="insert into Bili_tag... " />
@@ -103,12 +149,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="metrics.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="metrics.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/utils/metrics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-372">
-              <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+            <state relative-caret-position="122">
+              <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="359">
+                <caret line="27" column="29" lean-forward="false" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -117,7 +176,7 @@
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2816">
-              <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -216,11 +275,11 @@
         <option value="$PROJECT_DIR$/BilibiliSpider/settings.py" />
         <option value="$PROJECT_DIR$/tools/yundama_requests.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/BilibiliSpider/mixins.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/items.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/utils/metrics.py" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -279,13 +338,7 @@
             <path>
               <item name="BilibiliSpider" type="b2602c69:ProjectViewProjectNode" />
               <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BilibiliSpider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="Bibibili" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -455,13 +508,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35147393" sideWeight="0.5064378" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33219954" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1802721" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19098713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -914,17 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="338">
-            <caret line="13" column="93" lean-forward="true" selection-start-line="13" selection-start-column="93" selection-end-line="13" selection-end-column="93" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/yundama_requests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
@@ -944,19 +987,9 @@
     <entry file="file://$PROJECT_DIR$/BilibiliSpider/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2816">
-          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -964,15 +997,15 @@
     <entry file="file://$PROJECT_DIR$/BilibiliSpider/mixins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-944">
-          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <caret line="3" column="5" lean-forward="false" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BilibiliSpider/items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="217" column="128" lean-forward="false" selection-start-line="217" selection-start-column="128" selection-end-line="217" selection-end-column="128" />
+        <state relative-caret-position="720">
+          <caret line="213" column="45" lean-forward="false" selection-start-line="213" selection-start-column="45" selection-end-line="213" selection-end-column="45" />
           <folding>
             <marker date="1534414632416" expanded="true" signature="861:1011" ph="insert into Bili_tag... " />
             <marker date="1534414632416" expanded="true" signature="861:1040" ph="insert into Bili_tag... " />
@@ -999,11 +1032,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BilibiliSpider/utils/metrics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-372">
-          <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+        <state relative-caret-position="122">
+          <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="359">
+            <caret line="27" column="29" lean-forward="false" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

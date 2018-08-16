@@ -21,3 +21,8 @@
       
 3. 扩展: 在settings.py中EXTENSION打开需要的扩展
 4. 运行: 执行exec.py文件即可
+
+### 数据库
+1. 本爬虫系统使用django进行数据库模型的建立与初始化数据
+2. 执行django文件下的manage.py python manage.py migrate
+3. 导入数据 执行db_tool包下的import等文件
