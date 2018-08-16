@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 import scrapy
 import json
+import os
 
 from scrapy.signals import spider_error
 from scrapy.xlib.pydispatch import dispatcher
