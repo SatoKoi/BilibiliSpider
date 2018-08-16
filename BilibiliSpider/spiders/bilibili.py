@@ -13,7 +13,7 @@ from ..mixins import *
 from ..items import *
 from ..map.defaults import *
 from ..settings import *
-from ..utils.metrics import find_reply_person, get_plat, cookies_from_string
+from ..utils.metrics import *
 
 
 class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):

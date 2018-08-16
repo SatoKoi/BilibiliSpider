@@ -5,55 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25608b04-2f7a-45cc-ba21-5dc843d88d3e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/.idea/Bibibili.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bibibili/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bibibili/settings.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bibibili/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bibibili/wsgi.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/apps.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0001_initial.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0002_auto_20180810_2208.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0003_auto_20180810_2214.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0004_videoorarticle_is_video_or_article.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0005_videoorarticle_cover_img_url.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0006_auto_20180811_1705.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0007_auto_20180811_1707.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0008_article_img_box.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0009_auto_20180813_1012.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0010_auto_20180813_1113.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0011_auto_20180813_1124.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0012_auto_20180813_1136.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0013_auto_20180813_1136.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0014_category_code.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0015_auto_20180813_1630.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0016_auto_20180813_1834.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0017_auto_20180814_2044.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0018_auto_20180814_2052.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0019_auto_20180814_2234.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0020_auto_20180814_2244.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0021_auto_20180814_2247.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0022_auto_20180815_1645.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0023_remove_person_play_game_list.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0024_auto_20180815_2256.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/0025_auto_20180815_2302.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/Bili/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/db_tool/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/db_tool/data/category_data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/db_tool/data/data.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/db_tool/data/data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/db_tool/import_category_data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/db_tool/import_child_category_data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bibibili/manage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" afterPath="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="bilibili.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bilibili.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -159,7 +111,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -277,9 +229,9 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/BilibiliSpider/mixins.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/items.py" />
-        <option value="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/utils/metrics.py" />
         <option value="$PROJECT_DIR$/readme.md" />
+        <option value="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
       </list>
     </option>
   </component>
@@ -338,7 +290,13 @@
             <path>
               <item name="BilibiliSpider" type="b2602c69:ProjectViewProjectNode" />
               <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="Bibibili" type="462c0819:PsiDirectoryNode" />
+              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BilibiliSpider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
+              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
+              <item name="spiders" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1032,16 +990,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BilibiliSpider/utils/metrics.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -1058,6 +1006,16 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding>
+            <element signature="e#23#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
