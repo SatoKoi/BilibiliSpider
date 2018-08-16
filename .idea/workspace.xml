@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" line="338" mnemonic="0" />
+    <bookmark url="file://$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" line="339" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25608b04-2f7a-45cc-ba21-5dc843d88d3e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/mixins.py" afterPath="$PROJECT_DIR$/BilibiliSpider/mixins.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/items.py" afterPath="$PROJECT_DIR$/BilibiliSpider/items.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" afterPath="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/utils/metrics.py" afterPath="$PROJECT_DIR$/BilibiliSpider/utils/metrics.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,8 +40,8 @@
       <file leaf-file-name="bilibili.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="806">
-              <caret line="118" column="35" lean-forward="false" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
+            <state relative-caret-position="413">
+              <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -47,21 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mixins.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mixins.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/mixins.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="metrics.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BilibiliSpider/utils/metrics.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="197" column="11" lean-forward="false" selection-start-line="197" selection-start-column="11" selection-end-line="197" selection-end-column="11" />
+            <state relative-caret-position="-944">
+              <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -82,31 +74,41 @@
       <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="260" column="64" lean-forward="false" selection-start-line="260" selection-start-column="64" selection-end-line="260" selection-end-column="64" />
+            <state relative-caret-position="434">
+              <caret line="217" column="128" lean-forward="false" selection-start-line="217" selection-start-column="128" selection-end-line="217" selection-end-column="128" />
               <folding>
-                <marker date="1534346141208" expanded="true" signature="861:1011" ph="insert into Bili_tag... " />
-                <marker date="1534346141208" expanded="true" signature="861:1040" ph="insert into Bili_tag... " />
-                <marker date="1534346141208" expanded="true" signature="861:1108" ph="insert into Bili_tag... " />
-                <marker date="1534346141208" expanded="true" signature="1041:1108" ph="update `like... " />
-                <marker date="1534346141208" expanded="true" signature="1743:1859" ph="insert into Bili_category... " />
-                <marker date="1534346141208" expanded="true" signature="1743:1888" ph="insert into Bili_category... " />
-                <marker date="1534346141208" expanded="true" signature="1889:2016" ph="UPDATE `cate... " />
-                <marker date="1534346141208" expanded="true" signature="3259:3563" ph="insert into Bili_video... " />
-                <marker date="1534346141208" expanded="true" signature="3564:3593" ph="update `id` " />
-                <marker date="1534346141208" expanded="true" signature="3564:3952" ph="update `id`=... " />
-                <marker date="1534346141208" expanded="true" signature="5426:5717" ph="insert into Bili_article... " />
-                <marker date="1534346141208" expanded="true" signature="5426:5746" ph="insert into Bili_article... " />
-                <marker date="1534346141208" expanded="true" signature="5747:6174" ph="UPDATE `auth... " />
-                <marker date="1534346141208" expanded="true" signature="5754:6174" ph="update `id`=... " />
-                <marker date="1534346141208" expanded="true" signature="7194:7401" ph="insert into Bili_comment... " />
-                <marker date="1534346141208" expanded="true" signature="7194:7430" ph="insert into Bili_comment... " />
-                <marker date="1534346141208" expanded="true" signature="7431:7522" ph="update id=(s... " />
-                <marker date="1534346141208" expanded="true" signature="7431:7611" ph="update id=(s... " />
-                <marker date="1534346141208" expanded="true" signature="8828:9084" ph="insert into Bili_person... " />
-                <marker date="1534346141208" expanded="true" signature="8828:9112" ph="insert into Bili_person... " />
-                <marker date="1534346141208" expanded="true" signature="9113:9467" ph="UPDATE `name... " />
+                <marker date="1534414632416" expanded="true" signature="861:1011" ph="insert into Bili_tag... " />
+                <marker date="1534414632416" expanded="true" signature="861:1040" ph="insert into Bili_tag... " />
+                <marker date="1534414632416" expanded="true" signature="861:1108" ph="insert into Bili_tag... " />
+                <marker date="1534414632416" expanded="true" signature="1041:1108" ph="update `like... " />
+                <marker date="1534414632416" expanded="true" signature="1743:1859" ph="insert into Bili_category... " />
+                <marker date="1534414632416" expanded="true" signature="1743:1888" ph="insert into Bili_category... " />
+                <marker date="1534414632416" expanded="true" signature="1889:2016" ph="UPDATE `cate... " />
+                <marker date="1534414632416" expanded="true" signature="3259:3563" ph="insert into Bili_video... " />
+                <marker date="1534414632416" expanded="true" signature="3564:3593" ph="update `id` " />
+                <marker date="1534414632416" expanded="true" signature="3564:3952" ph="update `id`=... " />
+                <marker date="1534414632416" expanded="true" signature="5426:5717" ph="insert into Bili_article... " />
+                <marker date="1534414632416" expanded="true" signature="5426:5746" ph="insert into Bili_article... " />
+                <marker date="1534414632416" expanded="true" signature="5747:6174" ph="UPDATE `auth... " />
+                <marker date="1534414632416" expanded="true" signature="5754:6174" ph="update `id`=... " />
+                <marker date="1534414632416" expanded="true" signature="7220:7439" ph="insert into Bili_comment... " />
+                <marker date="1534414632416" expanded="true" signature="7220:7468" ph="insert into Bili_comment... " />
+                <marker date="1534414632416" expanded="true" signature="7469:7560" ph="update id=(s... " />
+                <marker date="1534414632416" expanded="true" signature="7469:7649" ph="update id=(s... " />
+                <marker date="1534414632416" expanded="true" signature="8884:9140" ph="insert into Bili_person... " />
+                <marker date="1534414632416" expanded="true" signature="8884:9168" ph="insert into Bili_person... " />
+                <marker date="1534414632416" expanded="true" signature="9169:9523" ph="UPDATE `name... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="metrics.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BilibiliSpider/utils/metrics.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-372">
+              <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,7 +116,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2830">
+            <state relative-caret-position="-2816">
               <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
@@ -206,19 +208,19 @@
         <option value="$PROJECT_DIR$/BilibiliSpider/verify/model7.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/verify/model.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/old/bili.py" />
-        <option value="$PROJECT_DIR$/BilibiliSpider/items.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/verify/crack.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/pipelines.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/map/defaults.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/middlewares.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/extensions.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/settings.py" />
-        <option value="$PROJECT_DIR$/BilibiliSpider/utils/metrics.py" />
-        <option value="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
         <option value="$PROJECT_DIR$/tools/yundama_requests.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/BilibiliSpider/mixins.py" />
+        <option value="$PROJECT_DIR$/BilibiliSpider/items.py" />
+        <option value="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
+        <option value="$PROJECT_DIR$/BilibiliSpider/utils/metrics.py" />
       </list>
     </option>
   </component>
@@ -229,10 +231,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="219" />
-    <option name="y" value="86" />
-    <option name="width" value="1068" />
-    <option name="height" value="873" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -278,6 +280,12 @@
               <item name="BilibiliSpider" type="b2602c69:ProjectViewProjectNode" />
               <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
               <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BilibiliSpider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
+              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -877,36 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BilibiliSpider/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="260" column="64" lean-forward="false" selection-start-line="260" selection-start-column="64" selection-end-line="260" selection-end-column="64" />
-          <folding>
-            <marker date="1534346141208" expanded="true" signature="861:1011" ph="insert into Bili_tag... " />
-            <marker date="1534346141208" expanded="true" signature="861:1040" ph="insert into Bili_tag... " />
-            <marker date="1534346141208" expanded="true" signature="861:1108" ph="insert into Bili_tag... " />
-            <marker date="1534346141208" expanded="true" signature="1041:1108" ph="update `like... " />
-            <marker date="1534346141208" expanded="true" signature="1743:1859" ph="insert into Bili_category... " />
-            <marker date="1534346141208" expanded="true" signature="1743:1888" ph="insert into Bili_category... " />
-            <marker date="1534346141208" expanded="true" signature="1889:2016" ph="UPDATE `cate... " />
-            <marker date="1534346141208" expanded="true" signature="3259:3563" ph="insert into Bili_video... " />
-            <marker date="1534346141208" expanded="true" signature="3564:3593" ph="update `id` " />
-            <marker date="1534346141208" expanded="true" signature="3564:3952" ph="update `id`=... " />
-            <marker date="1534346141208" expanded="true" signature="5426:5717" ph="insert into Bili_article... " />
-            <marker date="1534346141208" expanded="true" signature="5426:5746" ph="insert into Bili_article... " />
-            <marker date="1534346141208" expanded="true" signature="5747:6174" ph="UPDATE `auth... " />
-            <marker date="1534346141208" expanded="true" signature="5754:6174" ph="update `id`=... " />
-            <marker date="1534346141208" expanded="true" signature="7194:7401" ph="insert into Bili_comment... " />
-            <marker date="1534346141208" expanded="true" signature="7194:7430" ph="insert into Bili_comment... " />
-            <marker date="1534346141208" expanded="true" signature="7431:7522" ph="update id=(s... " />
-            <marker date="1534346141208" expanded="true" signature="7431:7611" ph="update id=(s... " />
-            <marker date="1534346141208" expanded="true" signature="8828:9084" ph="insert into Bili_person... " />
-            <marker date="1534346141208" expanded="true" signature="8828:9112" ph="insert into Bili_person... " />
-            <marker date="1534346141208" expanded="true" signature="9113:9467" ph="UPDATE `name... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BilibiliSpider/middlewares.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -924,24 +902,6 @@
           <folding>
             <element signature="e#23#37#0" expanded="true" />
             <marker date="1534404785492" expanded="true" signature="777:841" ph="select user,... myaccount" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BilibiliSpider/utils/metrics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="197" column="11" lean-forward="false" selection-start-line="197" selection-start-column="11" selection-end-line="197" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BilibiliSpider/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2830">
-          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -981,10 +941,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BilibiliSpider/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2816">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="118" column="35" lean-forward="false" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
+        <state relative-caret-position="413">
+          <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
@@ -993,8 +963,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BilibiliSpider/mixins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="-944">
+          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BilibiliSpider/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="217" column="128" lean-forward="false" selection-start-line="217" selection-start-column="128" selection-end-line="217" selection-end-column="128" />
+          <folding>
+            <marker date="1534414632416" expanded="true" signature="861:1011" ph="insert into Bili_tag... " />
+            <marker date="1534414632416" expanded="true" signature="861:1040" ph="insert into Bili_tag... " />
+            <marker date="1534414632416" expanded="true" signature="861:1108" ph="insert into Bili_tag... " />
+            <marker date="1534414632416" expanded="true" signature="1041:1108" ph="update `like... " />
+            <marker date="1534414632416" expanded="true" signature="1743:1859" ph="insert into Bili_category... " />
+            <marker date="1534414632416" expanded="true" signature="1743:1888" ph="insert into Bili_category... " />
+            <marker date="1534414632416" expanded="true" signature="1889:2016" ph="UPDATE `cate... " />
+            <marker date="1534414632416" expanded="true" signature="3259:3563" ph="insert into Bili_video... " />
+            <marker date="1534414632416" expanded="true" signature="3564:3593" ph="update `id` " />
+            <marker date="1534414632416" expanded="true" signature="3564:3952" ph="update `id`=... " />
+            <marker date="1534414632416" expanded="true" signature="5426:5717" ph="insert into Bili_article... " />
+            <marker date="1534414632416" expanded="true" signature="5426:5746" ph="insert into Bili_article... " />
+            <marker date="1534414632416" expanded="true" signature="5747:6174" ph="UPDATE `auth... " />
+            <marker date="1534414632416" expanded="true" signature="5754:6174" ph="update `id`=... " />
+            <marker date="1534414632416" expanded="true" signature="7220:7439" ph="insert into Bili_comment... " />
+            <marker date="1534414632416" expanded="true" signature="7220:7468" ph="insert into Bili_comment... " />
+            <marker date="1534414632416" expanded="true" signature="7469:7560" ph="update id=(s... " />
+            <marker date="1534414632416" expanded="true" signature="7469:7649" ph="update id=(s... " />
+            <marker date="1534414632416" expanded="true" signature="8884:9140" ph="insert into Bili_person... " />
+            <marker date="1534414632416" expanded="true" signature="8884:9168" ph="insert into Bili_person... " />
+            <marker date="1534414632416" expanded="true" signature="9169:9523" ph="UPDATE `name... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BilibiliSpider/utils/metrics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-372">
+          <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
           <folding />
         </state>
       </provider>

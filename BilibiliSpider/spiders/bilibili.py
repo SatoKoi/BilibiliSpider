@@ -224,7 +224,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
                 yield scrapy.Request(url=reply_url.format(pn=1, root=root, id=sid),
                                      dont_filter=True,
                                      callback=self.parse_reply,
-                                     meta={'root': root_id,
+                                     meta={'root': root,
                                            'sid': sid,
                                            'source': response.meta.get('source'),
                                            'reply_url': reply_url}
@@ -269,6 +269,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         comment_loader.add_value('floor', reply['floor'])
         comment_loader.add_value('is_main', is_main)
         comment_loader.add_value('publish_time', datetime.fromtimestamp(reply['ctime']))
+        comment_loader.add_value('type', get_type(source))
         item = comment_loader.load_item()
         yield item
 

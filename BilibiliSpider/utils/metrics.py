@@ -191,6 +191,13 @@ def get_plat(x):
     return x if x <= 3 else 4
 
 
+def get_type(x):
+    if re.search(r'av\d+', str(x)):
+        return 0
+    elif re.search(r'cv\d+', str(x)):
+        return 1
+
+
 def from_timestamp(x):
     return datetime.fromtimestamp(int(x))
 
