@@ -20,3 +20,4 @@
    2. _message_: 你想回复的信息内容
       
 3. 扩展: 在settings.py中EXTENSION打开需要的扩展
+4. 运行: 执行exec.py文件即可
