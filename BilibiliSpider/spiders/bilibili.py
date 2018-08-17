@@ -285,29 +285,33 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
                                  formdata=form_data,
                                  dont_filter=True,
                                  callback=self._parse_person_stats,
-                                 meta={'user_id': user_id}
+                                 meta={'user_id': user_id,
+                                       'url': response.url}
                                  )
 
     def _parse_person_stats(self, response):
         """user基本信息"""
         decode_data = self.decode_data(response.text)
-        person_loader = DefaultItemLoader(PersonItem(), response=response)
-        person_loader.add_value('name', decode_data.get('name'))
-        person_loader.add_value('gender', decode_data.get('gender'))
-        person_loader.add_value('sign', decode_data.get('sign'))
-        person_loader.add_value('uid', decode_data.get('mid'))
-        person_loader.add_value('level', decode_data['level_info'].get('current_level', 0))
-        person_loader.add_value('birthday', decode_data.get('birthday'))
-        person_loader.add_value('avatar', decode_data.get('face'))
-        person_loader.add_value('member_level', decode_data['vip'].get('vipType', 0))
-        person_loader.add_value('register_time', decode_data.get('regtime'))
-        person_item = person_loader.load_item()
-        yield scrapy.Request(url=self.api_urls.get('fstats').format(id=response.meta.get('user_id')),
-                             callback=self._parse_person_fstats,
-                             dont_filter=True,
-                             meta={'person_item': person_item,
-                                   'user_id': response.meta.get('user_id')}
-                             )
+        if decode_data['status']:
+            person_loader = DefaultItemLoader(PersonItem(), response=response)
+            person_loader.add_value('name', decode_data.get('name'))
+            person_loader.add_value('gender', decode_data.get('gender'))
+            person_loader.add_value('sign', decode_data.get('sign'))
+            person_loader.add_value('uid', decode_data.get('mid'))
+            person_loader.add_value('level', decode_data['level_info'].get('current_level', 0))
+            person_loader.add_value('birthday', decode_data.get('birthday'))
+            person_loader.add_value('avatar', decode_data.get('face'))
+            person_loader.add_value('member_level', decode_data['vip'].get('vipType', 0))
+            person_loader.add_value('register_time', decode_data.get('regtime'))
+            person_item = person_loader.load_item()
+            yield scrapy.Request(url=self.api_urls.get('fstats').format(id=response.meta.get('user_id')),
+                                 callback=self._parse_person_fstats,
+                                 dont_filter=True,
+                                 meta={'person_item': person_item,
+                                       'user_id': response.meta.get('user_id')}
+                                 )
+        else:
+            yield scrapy.Request(url=response.meta['url'], meta={'status': 404, 'key': 'user' + response.meta.get('user_id')})
 
     def _parse_person_fstats(self, response):
         """user粉丝关注信息"""
@@ -330,7 +334,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
                              dont_filter=True,
                              callback=self._parse_person_tagstats,
                              meta=response.meta
-                             )
+                                 )
 
     def _parse_person_tagstats(self, response):
         """user关注tag标签信息"""
@@ -348,17 +352,22 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         yield scrapy.Request(url=self.api_urls.get('tstats').format(id=response.meta['tag_id']),
                              dont_filter=True,
                              callback=self._parse_tags_stats,
-                             meta={'tag_item': tag_item})
+                             meta={'tag_item': tag_item,
+                                   'url': response.url,
+                                   'tag_id': response.meta['tag_id']})
 
     def _parse_tags_stats(self, response):
         decode_data = self.decode_data(response.text)
-        tag_item = response.meta['tag_item']
-        tag_item['name'] = decode_data['tag_name']
-        tag_item['likes'] = decode_data['count'].get('atten', 0)
-        tag_item['content'] = decode_data['content']
-        tag_item['cover_url'] = decode_data['cover']
-        tag_item['publish_time'] = decode_data['ctime']
-        yield tag_item
+        if decode_data:
+            tag_item = response.meta['tag_item']
+            tag_item['name'] = decode_data['tag_name']
+            tag_item['likes'] = decode_data['count'].get('atten', 0)
+            tag_item['content'] = decode_data['content']
+            tag_item['cover_url'] = decode_data['cover']
+            tag_item['publish_time'] = decode_data['ctime']
+            yield tag_item
+        else:
+            yield scrapy.Request(url=response.meta['url'], meta={'status': 404, 'key': 'tag' + response.meta.get('tag_id')})
 
     def parse_online(self, response):
         """针对b站在线人数进行抓取"""
@@ -386,7 +395,14 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         """返回decode json类型的python对象"""
         try:
             data = json.loads(text)
-            return data['data']
+            status = data.get('status', True)
+            code = data.get('code', 0)
+            data = data['data']
+            if isinstance(data, dict):
+                data.update({'status': status, "code": code})
+            if isinstance(data, str):
+                data = {"msg": data, 'status': status, "code": code}
+            return data
         except:
             dispatcher.connect(self.handle_nodata, signals.request_dropped)
             return {}

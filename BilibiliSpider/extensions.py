@@ -23,12 +23,15 @@ class GetRemotePasswordExtension(object):
             charset=crawler.settings['MYSQL_CHARSET']
         )
         cursor = connection.cursor()
-        res = cursor.execute("select user, passwd from myaccount where md5_passwd='{}' and id={}"
-                             .format(crawler.settings['SECRET_KEY'], crawler.settings['ID']))
+        try:
+            res = cursor.execute("select user, passwd from myaccount where md5_passwd='{}' and id={}"
+                                 .format(crawler.settings['SECRET_KEY'], crawler.settings['ID']))
 
-        if res == 1:
+            if res == 1:
+                crawler.remote_account = {}
+                crawler.remote_account['REMOTE_MYSQL_USER'], crawler.remote_account['REMOTE_MYSQL_PASSWD'] = cursor.fetchone()
+        except:
             crawler.remote_account = {}
-            crawler.remote_account['REMOTE_MYSQL_USER'], crawler.remote_account['REMOTE_MYSQL_PASSWD'] = cursor.fetchone()
         return cls(crawler)
 
 

@@ -33,10 +33,11 @@ SPIDER_MIDDLEWARES = {
 # 下载器中间件, 轻量中间处理器
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 200,
-    'BilibiliSpider.middlewares.RandomUserAgentMiddleware': 250,
-    'BilibiliSpider.middlewares.RandomProxyMiddleware': 300,
-    'BilibiliSpider.middlewares.DynamicRefererMiddleware': 350,
-    'BilibiliSpider.middlewares.PosturlParseMiddleware': 150,
+    'BilibiliSpider.middlewares.RandomUserAgentMiddleware': 250,            # 随机ua
+    'BilibiliSpider.middlewares.RandomProxyMiddleware': 300,                # 随机ip
+    'BilibiliSpider.middlewares.DynamicRefererMiddleware': 350,             # 动态referer
+    'BilibiliSpider.middlewares.PosturlParseMiddleware': 150,               # posturl解析
+    'BilibiliSpider.middlewares.FilterNotExistUrlMiddleware': 100,          # 过滤不存在的url
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,     # 禁用默认的UserAgent
     # 'BilibiliSpider.middlewares.SeleniumDownloadMiddleware': 543,         # 使用selenium爬取模式开启
 }
@@ -44,7 +45,7 @@ DOWNLOADER_MIDDLEWARES = {
 # 扩展
 EXTENSIONS = {
     'BilibiliSpider.extensions.GetRemotePasswordExtension': 200,            # get远程连接密码
-    # 'BilibiliSpider.extensions.ParseOnlineExtension': 300                   # 在线人数抓取
+    'BilibiliSpider.extensions.ParseOnlineExtension': 300                   # 在线人数抓取
 }
 
 ITEM_PIPELINES = {
@@ -89,7 +90,7 @@ REMOTE_MYSQL_TOOLDB = 'tools'
 REDIS_HOST = '47.106.72.198'
 REDIS_PORT = 6379
 REDIS_PARAMS = {
-    'password': '5762360f'
+    'password': ''
 }
 
 # output - format

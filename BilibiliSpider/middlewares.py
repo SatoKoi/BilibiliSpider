@@ -11,12 +11,15 @@ import pymysql
 import random
 import urllib
 
+from lxml.etree import HTML
 from urllib.parse import urlparse
 from selenium.webdriver import PhantomJS, Chrome, ChromeOptions
 from selenium.webdriver.support.ui import WebDriverWait
 from scrapy import signals
 from scrapy.http import HtmlResponse
 from fake_useragent import UserAgent
+from redis import StrictRedis, ConnectionPool
+from scrapy.exceptions import IgnoreRequest
 
 from tools.getIp import GetIp
 from .utils.metrics import GetNumber
@@ -24,8 +27,6 @@ from .scripts import Script
 from .settings import REMOTE_MYSQL_CHARSET, REMOTE_MYSQL_HOST, REMOTE_MYSQL_PORT, \
     REMOTE_MYSQL_DATABASE, REMOTE_MYSQL_TOOLDB
 from .map.defaults import REG_PATTERN
-
-
 
 
 class BilibilispiderSpiderMiddleware(object):
@@ -231,7 +232,7 @@ class RandomProxyMiddleware(object):
     def process_request(self, request, spider):
         """设置动态ip代理, request将继续被处理"""
         # request.meta['proxy'] = self.ip_manager.get_random_ip()
-        ip_list = ['http://47.106.72.198:8000', None]
+        ip_list = [None]
         ip = random.choice(ip_list)
         if ip:
             request.meta['proxy'] = ip
@@ -279,3 +280,58 @@ class PosturlParseMiddleware(object):
                     s[1] = urllib.parse.unquote(s[1])
                 data.update({s[0]: s[1]})
             return HtmlResponse(request.url, body=json.dumps(data), request=request, encoding='utf8')
+
+
+class FilterNotExistUrlMiddleware(object):
+    def __init__(self, conn):
+        self.conn = conn
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        pool = ConnectionPool(
+            host=crawler.settings.get('REDIS_HOST', '127.0.0.1'),
+            port=crawler.settings.get('REDIS_PORT', 6379),
+            db=0,
+            password=crawler.settings.get('REDIS_PARAMS', {}).get('password', None)
+        )
+        conn = StrictRedis(connection_pool=pool)
+        o = cls(conn)
+        crawler.signals.connect(o.spider_opened, signal=signals.spider_opened)
+        return o
+
+    def process_request(self, request, spider):
+        if request.meta.get('status') == 404:
+            self.conn.sadd("bilibili:filter_keys", request.meta.get('key'))
+            raise IgnoreRequest("{} have no resource".format(request.url))
+        parse_res = urlparse(request.url)
+        iter_res = map(re.match,
+                       [REG_PATTERN['video'], REG_PATTERN['article'], REG_PATTERN['user'], REG_PATTERN['tag']],
+                       [parse_res.path] * 4,
+                       [re.I] * 4
+                       )
+        for k, result in zip(['av', 'cv', 'user', 'tag'], iter_res):
+            if result:
+                key = k + result.group(1)
+                request.meta['key'] = key
+                if self.conn.sismember("bilibili:filter_keys", key):
+                    raise IgnoreRequest("{} have no resource".format(request.url))
+                break
+
+    def process_response(self, request, response, spider):
+        if request.method == "GET":
+            html = HTML(response.text)
+            ele = html.xpath("//title")
+            if ele:
+                title = ele[0].text
+                # 200状态码, 但资源无效, 实际应返回404的页面
+                for error_title in ["Error", "视频去哪了"]:
+                    if error_title in title:
+                        self.conn.sadd("bilibili:filter_keys", request.meta.get('key'))
+                        raise IgnoreRequest("{} have no resource".format(request.url))
+        return response
+
+    def process_exception(self, request, exception, spider):
+        return None
+
+    def spider_opened(self, spider):
+        spider.logger.info('Spider %s start FilterNotExistUrlMiddleware' % spider.name)

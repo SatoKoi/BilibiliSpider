@@ -1,10 +1,10 @@
 # -*- coding:utf-8 -*-
 # REG_PATTERN
 REG_PATTERN = {
-    'video': r'/video/av(\d+)/',
-    'article': r'/read/cv(\d+)/',
+    'video': r'/video/av(\d+)',
+    'article': r'/read/cv(\d+)',
     'user': r'/(\d+)/',
-    'tag': r'/tag/(\d+)/',
+    'tag': r'/tag/(\d+)',
     'online': r'/x/web-interface/online',
     'reply': r'/reply'
 }
