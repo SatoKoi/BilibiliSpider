@@ -240,7 +240,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         sid, source = response.meta.get('sid'), response.meta.get('source')
         reply_url = response.meta['reply_url']
         for pn in self.partial(range(1, max_pn + 1)):
-            yield scrapy.Request(url=reply_url.format(pn=pn, aid=response.meta.get('sid'), root=response.meta.get('root')),
+            yield scrapy.Request(url=reply_url.format(pn=pn, id=response.meta.get('sid'), root=response.meta.get('root')),
                                  callback=self.parse_reply_page,
                                  meta={'sid': sid,
                                        'source': source}
@@ -334,7 +334,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
                              dont_filter=True,
                              callback=self._parse_person_tagstats,
                              meta=response.meta
-                                 )
+                             )
 
     def _parse_person_tagstats(self, response):
         """user关注tag标签信息"""

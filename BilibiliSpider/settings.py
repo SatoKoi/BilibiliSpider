@@ -87,7 +87,7 @@ REMOTE_MYSQL_CHARSET = 'utf8'
 REMOTE_MYSQL_TOOLDB = 'tools'
 
 # Remote Redis DB
-REDIS_HOST = '47.106.72.198'
+REDIS_HOST = ''
 REDIS_PORT = 6379
 REDIS_PARAMS = {
     'password': ''
@@ -119,7 +119,7 @@ ONLINE_INTERVAL = 120
 # 爬取页面设置
 PARSE_DETAIL_ORDER_ASC = True           # True 顺序爬取, False 反向爬取
 PARSE_COMMENTS = True                   # 是否爬取评论
-PARSE_COMMENTS_MAX_PAGES = 50           # 最大评论爬取页数, 每页50个评论
+PARSE_COMMENTS_MAX_PAGES = 50           # 最大评论爬取页数, 每页20个评论
 PARSE_CHILD_COMMENTS = True             # 是否爬取子评论
 PARSE_CHILD_COMMENTS_MAX_PAGES = 50     # 子评论爬取页数
 
