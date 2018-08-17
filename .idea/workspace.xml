@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25608b04-2f7a-45cc-ba21-5dc843d88d3e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BilibiliSpider/cookie/DedeUserID" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BilibiliSpider/cookie/DedeUserID__ckMd5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BilibiliSpider/cookie/LIVE_BUVID" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BilibiliSpider/cookie/SESSDATA" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BilibiliSpider/cookie/UM_distinctid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BilibiliSpider/cookie/_dfcaptcha" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BilibiliSpider/cookie/bili_jct" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BilibiliSpider/cookie/bp_t_offset_5281936" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BilibiliSpider/cookie/buvid3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BilibiliSpider/cookie/finger" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BilibiliSpider/cookie/fts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BilibiliSpider/cookie/sid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/readme.md" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/map/defaults.py" afterPath="$PROJECT_DIR$/BilibiliSpider/map/defaults.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/settings.py" afterPath="$PROJECT_DIR$/BilibiliSpider/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" afterPath="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/utils/bloom_filter.py" afterPath="$PROJECT_DIR$/BilibiliSpider/utils/bloom_filter.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,11 +50,24 @@
       <file leaf-file-name="bloom_filter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/utils/bloom_filter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+            <state relative-caret-position="234">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="e#23#33#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="476">
+                <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -119,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="90" column="17" lean-forward="true" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+            <state relative-caret-position="299">
+              <caret line="86" column="29" lean-forward="true" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -226,8 +224,8 @@
         <option value="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/BilibiliSpider/map/defaults.py" />
-        <option value="$PROJECT_DIR$/BilibiliSpider/utils/bloom_filter.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/settings.py" />
+        <option value="$PROJECT_DIR$/BilibiliSpider/utils/bloom_filter.py" />
       </list>
     </option>
   </component>
@@ -288,18 +286,6 @@
               <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
               <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BilibiliSpider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="spiders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BilibiliSpider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -314,14 +300,14 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\virtualenv\py3scrapy\BilibiliSpider\BilibiliSpider\old" />
+      <recent name="G:\virtualenv\py3scrapy\BilibiliSpider" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\virtualenv\py3scrapy\BilibiliSpider\BilibiliSpider\old_version" />
       <recent name="G:\virtualenv\py3scrapy\BilibiliSpider\BilibiliSpider\verify" />
       <recent name="G:\virtualenv\py3scrapy\BilibiliSpider\BilibiliSpider\old" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\virtualenv\py3scrapy\BilibiliSpider\BilibiliSpider\old" />
-      <recent name="G:\virtualenv\py3scrapy\BilibiliSpider" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -468,7 +454,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35147393" sideWeight="0.5064378" order="7" side_tool="true" content_ui="tabs" />
@@ -476,7 +461,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1802721" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33219954" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19366953" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19366953" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -994,17 +979,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="476">
-            <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BilibiliSpider/map/defaults.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -1013,23 +987,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BilibiliSpider/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="86" column="29" lean-forward="true" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BilibiliSpider/utils/bloom_filter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        <state relative-caret-position="234">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#23#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BilibiliSpider/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="90" column="17" lean-forward="true" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="476">
+            <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -4,7 +4,7 @@ import redis
 import math
 from hashlib import md5
 
-pool = redis.ConnectionPool(host='', port=6379, db=0, password="")
+pool = redis.ConnectionPool(host='47.106.72.198', port=6379, db=0, password="5762360f")
 conn = redis.StrictRedis(connection_pool=pool)
 
 

@@ -87,10 +87,10 @@ REMOTE_MYSQL_CHARSET = 'utf8'
 REMOTE_MYSQL_TOOLDB = 'tools'
 
 # Remote Redis DB
-REDIS_HOST = ''
+REDIS_HOST = '47.106.72.198'
 REDIS_PORT = 6379
 REDIS_PARAMS = {
-    'password': ''
+    'password': '5762360f'
 }
 
 # output - format
