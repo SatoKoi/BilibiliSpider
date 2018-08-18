@@ -7,6 +7,7 @@ from scrapy.signals import spider_error
 from scrapy.xlib.pydispatch import dispatcher
 
 from .settings import COOKIES_DICT, COOKIES_STRING, COOKIES_FROM_FILE
+from .utils.metrics import *
 
 
 class ReplyMixin(object):

@@ -205,7 +205,7 @@ def from_timestamp(x):
 def cookies_from_string(x):
     cookie_dict = {}
     for cookie in str(x).split("; "):
-        r = cookie.split('=')
+        r = cookie.strip().split('=')
         cookie_dict.update({r[0]: r[1]})
     return cookie_dict
 
