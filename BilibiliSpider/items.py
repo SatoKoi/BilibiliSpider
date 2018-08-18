@@ -211,8 +211,7 @@ class CommentItem(scrapy.Item):
             insert into Bili_comment(`sid`, `source`, `person`, `desc`, `likes`, `plat_from`, 
             `reply_person`, `floor`, `is_main`, `publish_time`, `type`) 
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            ON duplicate KEY update id=(select id from (select id from `Bili_comment` where source=VALUES (source)) res),
-             `source`=VALUES (source), `person`=VALUES (person), `likes`=VALUES (likes);
+            ON duplicate KEY update `source`=VALUES (source), `person`=VALUES (person), `likes`=VALUES (likes);
         """
         values = (self.get('sid'), self.get('source'), self.get('person'), self.get('desc'), self.get('likes'), self.get('plat_from'),
                   self.get('reply_person', ""), self.get('floor'), self.get('is_main'), self.get('publish_time'), self.get('type'))
