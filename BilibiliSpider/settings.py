@@ -49,8 +49,9 @@ EXTENSIONS = {
 }
 
 ITEM_PIPELINES = {
-    'BilibiliSpider.pipelines.RedisPipeline': 300,                    # redis管道
-    'BilibiliSpider.pipelines.MysqlTwistPipeline': 200,               # mysql异步管道
+    'BilibiliSpider.pipelines.RedisPipeline': 300,                      # redis管道
+    # 'BilibiliSpider.pipelines.MysqlTwistPipeline': 200,               # mysql异步管道
+    # 'BilibiliSpider.pipelines.MysqlPipeline': 200,                    # mysql同步管道
     # 'BilibiliSpider.pipelines.JsonExporterPipeline': 250              # json管道
 }
 
@@ -92,6 +93,7 @@ REDIS_PORT = 6379
 REDIS_PARAMS = {
     'password': ''
 }
+REDIS_ITEMS_KEY = '%(spider)s:%(item)s'
 
 # output - format
 SQL_DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -110,7 +112,7 @@ JSON_EXPORT_LOCATION = os.path.join(ROOT_DIR, 'exports')    # json保存文件�
 # PIPELINE of ITEM (选择管道产出相应的item)
 JSON_ITEMS = ('OnlineItem',)
 MYSQL_ITEMS = ('TagItem', 'CategoryItem', 'VideoItem', 'ArticleItem', 'CommentItem', 'PersonItem')
-REDIS_ITEMS = ('OnlineItem',)
+REDIS_ITEMS = ('TagItem', 'CategoryItem', 'VideoItem', 'ArticleItem', 'CommentItem', 'PersonItem', 'OnlineItem',)
 
 # 在线人数爬取时间间隔设置
 # 每120s爬取一次

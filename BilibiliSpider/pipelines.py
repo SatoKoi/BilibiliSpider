@@ -11,6 +11,7 @@ import functools
 import json
 
 from scrapy import Request
+from scrapy.utils.misc import load_object
 from scrapy.xlib.pydispatch import dispatcher
 from scrapy.signals import *
 from scrapy.utils.python import to_bytes
@@ -104,6 +105,7 @@ class MysqlTwistPipeline(object):
                           use_unicode=True,
                           )
         # 调用twist异步模块的连接池, arg1: 需要调用的Mysql操作库名称, arg2: 连接参数
+        conn = pymysql.connect(**api_params)
         dbpool = adbapi.ConnectionPool('pymysql', **api_params)
         items = crawler.settings.get("MYSQL_ITEMS", [])
         return cls(dbpool, items)  # 对自身进行实例化
@@ -123,6 +125,42 @@ class MysqlTwistPipeline(object):
     def handle_error(self, failure, item, spider):
         """异步处理插入操作的异常"""
         spider.logger.warn(failure)
+
+    def do_insert(self, cursor, item):
+        """:param cursor: 接受cursorclass中的cursor
+        异步化操作后, runInteraction将自动commit, 不需要手动
+        """
+        insert_sql, params = item.get_insert_sql()
+        cursor.execute(insert_sql, params)
+
+
+class MysqlPipeline(object):
+    def __init__(self, conn, items):
+        self.conn = conn
+        self.cursor = self.conn.cursor()
+        self.items = items
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        """每次初始化加载, 都会将settings.py中的设置传入到:param settings中"""
+        api_params = dict(host=crawler.settings['REMOTE_MYSQL_HOST'],
+                          user=crawler.remote_account.get('REMOTE_MYSQL_USER', 'root'),
+                          password=crawler.remote_account.get('REMOTE_MYSQL_PASSWD', '123456'),
+                          port=crawler.settings['REMOTE_MYSQL_PORT'],
+                          db=crawler.settings['REMOTE_MYSQL_DATABASE'],
+                          charset=crawler.settings['REMOTE_MYSQL_CHARSET'],
+                          autocommit=True
+                          )
+        # 调用twist异步模块的连接池, arg1: 需要调用的Mysql操作库名称, arg2: 连接参数
+        conn = pymysql.connect(**api_params)
+        items = crawler.settings.get("MYSQL_ITEMS", [])
+        return cls(conn, items)  # 对自身进行实例化
+
+    def process_item(self, item, spider):
+        for i in self.items:
+            if isinstance(item, eval(i)):
+                self.do_insert(self.cursor, item)
+        return item
 
     def do_insert(self, cursor, item):
         """:param cursor: 接受cursorclass中的cursor
@@ -161,8 +199,12 @@ class RedisPipeline(RedisPipeline):
     def process_item(self, item, spider):
         for i in self.items:
             if isinstance(item, eval(i)):
+                spider.key = i
                 return deferToThread(self._process_item, item, spider)
         return item
+
+    def item_key(self, item, spider):
+        return self.key % {'spider': spider.name, 'item': spider.key}
 
 
 class ExcelExporterPipeline(object):
