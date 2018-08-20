@@ -343,7 +343,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         """user关注tag标签信息"""
         decode_data = self.decode_data(response.text)
         person_item = response.meta['person_item']
-        person_item['tags'] = [tag.get('name', "") for tag in decode_data('tags', {})]
+        person_item['tags'] = [tag.get('name', "") for tag in decode_data.get('tags', {})]
         yield person_item
 
     def parse_tags(self, response):
