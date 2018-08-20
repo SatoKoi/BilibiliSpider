@@ -1,17 +1,12 @@
 # -*- coding:utf-8 -*-
 import sys, os
 from redis import StrictRedis, ConnectionPool
-<<<<<<< HEAD
 
 base_dir = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 sys.path.insert(0, base_dir)
 
 from db_layer.item_map import *
 from db_layer.logs import Logger
-=======
-from BilibiliSpider.db_layer.item_map import *
-from BilibiliSpider.db_layer.logs import Logger
->>>>>>> b4c5b121e8354dc14cb3c392095fd8e07762c172
 from concurrent.futures import ThreadPoolExecutor
 
 import time
