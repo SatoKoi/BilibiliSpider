@@ -87,11 +87,11 @@ class Person(Model):
     attention_nums = models.IntegerField(verbose_name="关注数", help_text="关注数", default=0)
     fans_nums = models.IntegerField(verbose_name="粉丝数", help_text="粉丝数", default=0)
     play_nums = models.IntegerField(verbose_name="播放数", help_text="播放数", default=0)
-    register_time = models.DateField(verbose_name="注册日期", help_text="注册日期")
+    register_time = models.DateTimeField(verbose_name="注册日期", help_text="注册日期")
     # play_game_list = models.CharField(verbose_name="最近玩过的游戏", help_text="最近玩过的游戏", max_length=200)
     member_level = models.CharField(choices=MEMBER_CHOICES, verbose_name="会员等级", help_text="会员等级", max_length=6)
     # subscribe_tags = models.ManyToManyField(TagModel)
-    subscribe_tags = models.CharField(verbose_name="标签集", help_text="标签集", max_length=200)
+    tags = models.CharField(verbose_name="标签集", help_text="标签集", max_length=200)
 
     class Meta:
         verbose_name_plural = verbose_name = "用户"
@@ -130,7 +130,7 @@ class Video(Model):
     likes = models.IntegerField(verbose_name="点赞数", help_text="点赞数", default=0)
     shares = models.IntegerField(verbose_name="分享数", help_text="分享数", default=0)
     publish_time = models.DateTimeField(verbose_name="发布日期", help_text="发布日期")
-    tags = models.CharField(verbose_name="标签集", help_text="标签集", max_length=200)
+    tags = models.CharField(verbose_name="标签集", help_text="标签集", max_length=200, null=True)
     category = models.CharField(verbose_name="分类集", help_text="分类集", max_length=50)
     # category = models.ForeignKey(CategoryModel, on_delete=models.CASCADE)
     # tags = models.ManyToManyField(TagModel)
@@ -157,7 +157,7 @@ class Article(Model):
     likes = models.IntegerField(verbose_name="喜欢数", help_text="喜欢数", default=0)
     shares = models.IntegerField(verbose_name="分享数", help_text="分享数", default=0)
     publish_time = models.DateTimeField(verbose_name="发布日期", help_text="发布日期")
-    tags = models.CharField(verbose_name="标签集", help_text="标签集", max_length=200)
+    tags = models.CharField(verbose_name="标签集", help_text="标签集", max_length=200, null=True)
     category = models.CharField(verbose_name="分类集", help_text="分类集", max_length=50)
 
     class Meta:
@@ -187,7 +187,7 @@ class Comment(Model):
     source = models.CharField(verbose_name="来源url", help_text="来源url", max_length=255)
     # person = models.ForeignKey(PersonModel, on_delete=models.CASCADE, verbose_name="评论用户", related_name="person")
     person = models.CharField(verbose_name="评论用户", help_text="评论用户", max_length=30)
-    desc = models.CharField(verbose_name="内容", help_text="内容", max_length=500)
+    desc = models.TextField(verbose_name="内容", help_text="内容")
     likes = models.IntegerField(verbose_name="点赞数", help_text="点赞数", default=0)
     plat_from = models.CharField(verbose_name="平台", help_text="平台", default="PC端", max_length=30)
     # reply_person = models.ForeignKey(PersonModel, on_delete=models.CASCADE, verbose_name="被回复用户", related_name="reply_person")

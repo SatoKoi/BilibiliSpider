@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 import pprint
+from collections import Sized
 
 
 class DictItem(object):
@@ -11,8 +12,11 @@ class DictItem(object):
     def __getitem__(self, item):
         return self.d[item]
 
-    def get(self, key, default=None):
-        return self.d.get(key, default)
+    def get(self, key, default=""):
+        data = self.d.get(key, default)
+        if isinstance(data, Sized) and not data:
+            data = default
+        return data
 
     def start_pretty(self):
         return "{\n"
@@ -96,7 +100,7 @@ class CommentItem(DictItem):
              `source`=VALUES (source), `person`=VALUES (person), `likes`=VALUES (likes);
         """
         values = (self.get('sid'), self.get('source'), self.get('person'), self.get('desc'), self.get('likes'), self.get('plat_from'),
-                  self.get('reply_person', ""), self.get('floor'), self.get('is_main'), self.get('publish_time'), self.get('type'))
+                  self.get('reply_person'), self.get('floor'), self.get('is_main'), self.get('publish_time'), self.get('type'))
         return insert_sql, values
 
 
@@ -106,12 +110,13 @@ class PersonItem(DictItem):
            insert into Bili_person(`name`, `gender`, `sign`, `uid`, `level`, `birthday`, `avatar`, 
            `attention_nums`, `fans_nums`, `play_nums`, `register_time`, `member_level`, `tags`) 
            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-           ON duplicate KEY UPDATE `name`=VALUES (name), `gender`=VALUES (gender), `sign`=VALUES (sign),
-           `level`=VALUES (`level`), `birthday`=VALUES (birthday), `avatar`=VALUES (avatar)
-           `attention_nums`=VALUES (attention_nums), `fans_nums`=VALUES (fans_nums), `play_nums`=VALUES (play_nums)
+           ON duplicate KEY UPDATE 
+           `name`=VALUES (`name`), `sign`=VALUES (`sign`), `gender`=VALUES (`gender`), 
+           `level`=VALUES (`level`), `birthday`=VALUES (birthday), `avatar`=VALUES (avatar),
+           `attention_nums`=VALUES (attention_nums), `fans_nums`=VALUES (fans_nums), `play_nums`=VALUES (play_nums),
            `member_level`=VALUES (member_level), `tags`=VALUES (tags);
        """
-        values = (self.get('name'), self.get('gender'), self.get('sign'), self.get('uid'), self.get('birthday'),
-                  self.get('avatar'), self.get('attention_nums'), self.get('fans_nums'), self.get('play_nums'),
-                  self.get('register_time'), self.get('member_level'), self.get('tags'))
+        values = (self.get('name'), self.get('gender'), self.get('sign'), self.get('uid'), self.get('level'), self.get('birthday'),
+                  self.get('avatar'), self.get('attention_nums', 0), self.get('fans_nums'), self.get('play_nums'),
+                  self.get('register_time'), self.get('member_level', 0), self.get('tags'))
         return insert_sql, values
