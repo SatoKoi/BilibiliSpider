@@ -4,7 +4,7 @@ import os
 import scrapy
 
 from scrapy import signals
-from scrapy.xlib.pydispatch import dispatcher
+from pydispatch import dispatcher
 from scrapy_redis.spiders import RedisSpider
 from selenium.webdriver import ChromeOptions
 # from requests.utils import cookiejar_from_dict
@@ -251,10 +251,11 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         decode_data = self.decode_data(response.text)
         replies = decode_data.get('replies')
         sid, source = response.meta.get('sid'), response.meta.get('source')
+        reply_person = decode_data.get['root']['member'].get('uname')
         for reply in replies:
-            yield from self._gen_reply(reply, sid, source, is_main=False)
+            yield from self._gen_reply(reply, sid, source, is_main=False, reply_p=reply_person)
 
-    def _gen_reply(self, reply, sid, source, is_main=True):
+    def _gen_reply(self, reply, sid, source, is_main=True, reply_p=None):
         """reply产出"""
         comment_loader = DefaultItemLoader(CommentItem())
         comment_loader.add_value('sid', sid)
@@ -262,6 +263,8 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         comment_loader.add_value('person', reply['member']['uname'])
         message = reply['content']['message']
         reply_person, message = find_reply_person(message)
+        if not is_main and not reply_person:
+            reply_person = reply
         comment_loader.add_value('desc', message)
         comment_loader.add_value('likes', reply['like'])
         comment_loader.add_value('plat_from', get_plat(reply['content'].get('plat', 0)))
@@ -340,7 +343,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         """user关注tag标签信息"""
         decode_data = self.decode_data(response.text)
         person_item = response.meta['person_item']
-        person_item['tags'] = [tag.get('name', "") for tag in decode_data['tags']]
+        person_item['tags'] = [tag.get('name', "") for tag in decode_data('tags', {})]
         yield person_item
 
     def parse_tags(self, response):
