@@ -6,4 +6,4 @@ from scrapy.cmdline import execute
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-execute(['scrapy', 'crawl', 'bilibili'])
+execute(['scrapy', 'crawl', 'bilibili', '-s' 'LOG_FILE=spider.log'])
