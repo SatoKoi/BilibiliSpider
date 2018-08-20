@@ -25,10 +25,8 @@ pycparser==2.18
 PyDispatcher==2.0.5
 PyMySQL==0.9.2
 pyOpenSSL==17.5.0
-pypiwin32==223
 pyquery==1.4.0
 python-dateutil==2.7.2
-pywin32==223
 PyYAML==3.13
 queuelib==1.4.2
 redis==2.10.6
@@ -49,3 +47,4 @@ w3lib==1.19.0
 websocket-client==0.48.0
 yarl==1.2.6
 zope.interface==4.4.3
+pillow==5.0.0
