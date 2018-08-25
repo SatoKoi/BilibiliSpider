@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 import pprint
 from collections import Sized
+from datetime import datetime, date
 
 
 class DictItem(object):
@@ -116,7 +117,7 @@ class PersonItem(DictItem):
            `attention_nums`=VALUES (attention_nums), `fans_nums`=VALUES (fans_nums), `play_nums`=VALUES (play_nums),
            `member_level`=VALUES (member_level), `tags`=VALUES (tags);
        """
-        values = (self.get('name'), self.get('gender'), self.get('sign'), self.get('uid'), self.get('level'), self.get('birthday'),
+        values = (self.get('name'), self.get('gender'), self.get('sign'), self.get('uid'), self.get('level'), self.get('birthday', date.fromtimestamp(0)),
                   self.get('avatar'), self.get('attention_nums', 0), self.get('fans_nums'), self.get('play_nums'),
-                  self.get('register_time'), self.get('member_level', 0), self.get('tags'))
+                  self.get('register_time', datetime.utcfromtimestamp(0)), self.get('member_level', 0), self.get('tags'))
         return insert_sql, values

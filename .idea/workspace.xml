@@ -4,12 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" line="343" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25608b04-2f7a-45cc-ba21-5dc843d88d3e" name="Default" comment="">
+    <list default="true" id="25608b04-2f7a-45cc-ba21-5dc843d88d3e" name="Default" comment="修复抓取user信息的标签bug">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bibibili/Bili/models.py" afterPath="$PROJECT_DIR$/Bibibili/Bili/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/db_layer/transfer.py" afterPath="$PROJECT_DIR$/BilibiliSpider/db_layer/transfer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/items.py" afterPath="$PROJECT_DIR$/BilibiliSpider/items.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" afterPath="$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BilibiliSpider/db_layer/item_map.py" afterPath="$PROJECT_DIR$/BilibiliSpider/db_layer/item_map.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,7 +39,7 @@
       <file leaf-file-name="bilibili.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
+            <state relative-caret-position="0">
               <caret line="345" column="100" lean-forward="false" selection-start-line="345" selection-start-column="100" selection-end-line="345" selection-end-column="100" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
@@ -51,13 +48,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Bibibili/Bili/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+            <state relative-caret-position="124">
+              <caret line="86" column="55" lean-forward="false" selection-start-line="86" selection-start-column="55" selection-end-line="86" selection-end-column="55" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item_map.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BilibiliSpider/db_layer/item_map.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="652">
+              <caret line="122" column="33" lean-forward="true" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="33" />
+              <folding>
+                <element signature="e#23#36#0" expanded="true" />
+                <marker date="1535180267422" expanded="true" signature="1084:1263" ph="insert into Bili_tag... " />
+                <marker date="1535180267422" expanded="true" signature="1264:1402" ph="update `like... " />
+                <marker date="1535180267422" expanded="true" signature="1735:2039" ph="insert into Bili_video... " />
+                <marker date="1535180267422" expanded="true" signature="2040:2428" ph="update `auth... " />
+                <marker date="1535180267422" expanded="true" signature="2938:3258" ph="insert into Bili_article... " />
+                <marker date="1535180267422" expanded="true" signature="3259:3686" ph="UPDATE `auth... " />
+                <marker date="1535180267422" expanded="true" signature="4215:4463" ph="insert into Bili_comment... " />
+                <marker date="1535180267422" expanded="true" signature="4464:4559" ph="UPDATE `sour... " />
+                <marker date="1535180267422" expanded="true" signature="4966:5250" ph="insert into Bili_person... " />
+                <marker date="1535180267422" expanded="true" signature="5251:5626" ph="UPDATE `name... " />
               </folding>
             </state>
           </provider>
@@ -123,7 +142,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BilibiliSpider/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
+            <state relative-caret-position="2288">
               <caret line="89" column="15" lean-forward="false" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="15" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
@@ -231,6 +250,7 @@
         <option value="$PROJECT_DIR$/BilibiliSpider/items.py" />
         <option value="$PROJECT_DIR$/Bibibili/Bili/models.py" />
         <option value="$PROJECT_DIR$/BilibiliSpider/db_layer/transfer.py" />
+        <option value="$PROJECT_DIR$/BilibiliSpider/db_layer/item_map.py" />
       </list>
     </option>
   </component>
@@ -278,6 +298,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -285,12 +307,21 @@
               <item name="BilibiliSpider" type="b2602c69:ProjectViewProjectNode" />
               <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="BilibiliSpider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
+              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BilibiliSpider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
+              <item name="BilibiliSpider" type="462c0819:PsiDirectoryNode" />
+              <item name="db_layer" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -441,6 +472,14 @@
       <option name="presentableId" value="Default" />
       <updated>1533718416978</updated>
     </task>
+    <task id="LOCAL-00001" summary="修复抓取user信息的标签bug">
+      <created>1535167356787</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1535167356787</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -455,17 +494,17 @@
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19635193" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19903433" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35147393" sideWeight="0.5064378" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33219954" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1802721" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33219954" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3446712" sideWeight="0.49356222" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3446712" sideWeight="0.49356222" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -481,6 +520,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修复抓取user信息的标签bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复抓取user信息的标签bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -608,7 +651,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../Lib/site-packages/scrapy/utils/signal.py" />
     <entry file="file://C:/Python36/Lib/datetime.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -729,7 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,7 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="3" column="5" lean-forward="false" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,7 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -772,9 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5512">
           <caret line="234" column="24" lean-forward="false" selection-start-line="234" selection-start-column="24" selection-end-line="234" selection-end-column="24" />
-          <folding>
-            <element signature="e#168#177#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -827,7 +863,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BilibiliSpider/spiders/bilibili.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
+        <state relative-caret-position="0">
           <caret line="345" column="100" lean-forward="false" selection-start-line="345" selection-start-column="100" selection-end-line="345" selection-end-column="100" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
@@ -835,19 +871,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BilibiliSpider/db_layer/transfer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="33" column="73" lean-forward="false" selection-start-line="33" selection-start-column="73" selection-end-line="33" selection-end-column="73" />
-          <folding>
-            <element signature="e#23#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BilibiliSpider/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
+        <state relative-caret-position="2288">
           <caret line="89" column="15" lean-forward="false" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="15" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
@@ -859,29 +885,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="248" column="0" lean-forward="false" selection-start-line="248" selection-start-column="0" selection-end-line="248" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BilibiliSpider/db_layer/transfer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="33" column="73" lean-forward="false" selection-start-line="33" selection-start-column="73" selection-end-line="33" selection-end-column="73" />
           <folding>
-            <marker date="1535166299846" expanded="true" signature="861:1040" ph="insert into Bili_tag... " />
-            <marker date="1535166299846" expanded="true" signature="1041:1179" ph="update `like... " />
-            <marker date="1535166299846" expanded="true" signature="1743:1888" ph="insert into Bili_category... " />
-            <marker date="1535166299846" expanded="true" signature="1889:2016" ph="UPDATE `cate... " />
-            <marker date="1535166299846" expanded="true" signature="3259:3563" ph="insert into Bili_video... " />
-            <marker date="1535166299846" expanded="true" signature="3564:3952" ph="update `auth... " />
-            <marker date="1535166299846" expanded="true" signature="5426:5746" ph="insert into Bili_article... " />
-            <marker date="1535166299846" expanded="true" signature="5747:6174" ph="UPDATE `auth... " />
-            <marker date="1535166299846" expanded="true" signature="7220:7468" ph="insert into Bili_comment... " />
-            <marker date="1535166299846" expanded="true" signature="7469:7550" ph="update `sour... " />
-            <marker date="1535166299846" expanded="true" signature="8702:8986" ph="insert into Bili_person... " />
-            <marker date="1535166299846" expanded="true" signature="8987:9341" ph="UPDATE `name... " />
+            <element signature="e#23#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Bibibili/Bili/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+        <state relative-caret-position="124">
+          <caret line="86" column="55" lean-forward="false" selection-start-line="86" selection-start-column="55" selection-end-line="86" selection-end-column="55" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BilibiliSpider/db_layer/item_map.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="122" column="33" lean-forward="true" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="33" />
+          <folding>
+            <element signature="e#23#36#0" expanded="true" />
+            <marker date="1535180267422" expanded="true" signature="1084:1263" ph="insert into Bili_tag... " />
+            <marker date="1535180267422" expanded="true" signature="1264:1402" ph="update `like... " />
+            <marker date="1535180267422" expanded="true" signature="1735:2039" ph="insert into Bili_video... " />
+            <marker date="1535180267422" expanded="true" signature="2040:2428" ph="update `auth... " />
+            <marker date="1535180267422" expanded="true" signature="2938:3258" ph="insert into Bili_article... " />
+            <marker date="1535180267422" expanded="true" signature="3259:3686" ph="UPDATE `auth... " />
+            <marker date="1535180267422" expanded="true" signature="4215:4463" ph="insert into Bili_comment... " />
+            <marker date="1535180267422" expanded="true" signature="4464:4559" ph="UPDATE `sour... " />
+            <marker date="1535180267422" expanded="true" signature="4966:5250" ph="insert into Bili_person... " />
+            <marker date="1535180267422" expanded="true" signature="5251:5626" ph="UPDATE `name... " />
           </folding>
         </state>
       </provider>
