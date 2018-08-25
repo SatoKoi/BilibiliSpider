@@ -245,10 +245,7 @@ class PersonItem(scrapy.Item):
     play_nums = scrapy.Field()
     register_time = scrapy.Field(input_processor=MapCompose(from_timestamp))
     member_level = scrapy.Field()
-    tags = scrapy.Field(
-        input_processor=MapCompose(strip),
-        output_processor=Join(',')
-    )
+    tags = scrapy.Field()
 
     def get_insert_sql(self):
         insert_sql = """

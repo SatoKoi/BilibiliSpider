@@ -31,14 +31,18 @@ class Transfer(object):
                 key = self.base_key % {'item': item}
                 key_len = self.redis.llen(key)
                 if key_len:
-                    chunk_size = self.chunk_size if self.chunk_size > key_len else key_len
+                    chunk_size = key_len if self.chunk_size > key_len else self.chunk_size
                     item_cls = eval(item)
-                    for _ in range(chunk_size):
-                        try:
-                            data = item_cls(json.loads(self.redis.lpop(key), encoding='utf8'))
-                            self._transfer(cursor, item, data)
-                        except Exception as e:
-                            self.handle_exception(item, {}, e)
+                    with self.redis.pipeline() as pipe:
+                        for _ in range(chunk_size):
+                            pipe.lpop(key)
+                        res_queue = pipe.execute()
+                        for row_data in res_queue:
+                            try:
+                                data = item_cls(json.loads(row_data, encoding='utf8'))
+                                self._transfer(cursor, item, data)
+                            except Exception as e:
+                                self.handle_exception(item, {}, e)
                 else:
                     break
 
@@ -62,6 +66,8 @@ class Transfer(object):
                         cursor.execute(insert_sql, params)
             except Exception as e:
                 self.loggers[1].error(item + ": " + str(data) + str(exception))
+        else:
+            self.loggers[1].error(str(exception))
 
     def handle_info(self, item, data):
         self.loggers[0].info(item + ": " + str(data))

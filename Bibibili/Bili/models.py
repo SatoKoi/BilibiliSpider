@@ -66,19 +66,13 @@ class Person(Model):
     member_level: 会员等级
     subscribe_tags: 订阅标签
     """
-    SEX_CHOICES = (
-        (0, "保密"),
-        (1, "男"),
-        (2, "女"),
-    )
     MEMBER_CHOICES = (
-        (0, "普通用户"),
-        (1, "大会员"),
-        (2, "年费大会员"),
+        ("0", "普通用户"),
+        ("1", "大会员"),
+        ("2", "年费大会员"),
     )
     name = models.CharField(verbose_name="用户名", help_text="用户名", max_length=30)
-    gender = models.CharField(choices=SEX_CHOICES, max_length=4, verbose_name="性别", help_text="性别",
-                              default="保密")
+    gender = models.CharField(max_length=4, verbose_name="性别", help_text="性别", default="保密")
     sign = models.CharField(verbose_name="个性签名", help_text="个性签名", default="", max_length=200)
     uid = models.IntegerField(verbose_name="用户uid", help_text="用户uid", primary_key=True)
     level = models.IntegerField(verbose_name="用户等级", help_text="用户等级", default=0)
@@ -91,7 +85,7 @@ class Person(Model):
     # play_game_list = models.CharField(verbose_name="最近玩过的游戏", help_text="最近玩过的游戏", max_length=200)
     member_level = models.CharField(choices=MEMBER_CHOICES, verbose_name="会员等级", help_text="会员等级", max_length=6)
     # subscribe_tags = models.ManyToManyField(TagModel)
-    tags = models.CharField(verbose_name="标签集", help_text="标签集", max_length=200)
+    tags = models.CharField(verbose_name="标签集", help_text="标签集", max_length=500)
 
     class Meta:
         verbose_name_plural = verbose_name = "用户"
