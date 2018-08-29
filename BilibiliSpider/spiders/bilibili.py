@@ -251,7 +251,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         decode_data = self.decode_data(response.text)
         replies = decode_data.get('replies')
         sid, source = response.meta.get('sid'), response.meta.get('source')
-        reply_person = decode_data.get['root']['member'].get('uname')
+        reply_person = decode_data.get('root')['member'].get('uname')
         for reply in replies:
             yield from self._gen_reply(reply, sid, source, is_main=False, reply_p=reply_person)
 
