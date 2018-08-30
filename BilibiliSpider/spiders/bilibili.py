@@ -264,7 +264,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         message = reply['content']['message']
         reply_person, message = find_reply_person(message)
         if not is_main and not reply_person:
-            reply_person = reply
+            reply_person = reply_p
         comment_loader.add_value('desc', message)
         comment_loader.add_value('likes', reply['like'])
         comment_loader.add_value('plat_from', get_plat(reply['content'].get('plat', 0)))
