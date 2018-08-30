@@ -15,6 +15,7 @@
  * 用户: 接受[https://space.bilibili.com/mid号/的url](https://space.bilibili.com/2/), 将对该user进行抓取。该方法需要登录cookies
  * 标签: 接受[https://www.bilibili.com/tag/id号/的url](https://www.bilibili.com/tag/9999/), 将对该tag进行抓取。
  * 回复: 接受https://www.bilibili.com/reply加get参数的url, 如: https://www.bilibili.com/reply?oid=170001&message, 该方法需要登录cookies 
+ * 关注番剧抢楼: 在redis客户端中发送hset bilibili:message 番剧名 消息主体 即可
  _参数配置:_
    1. _oid_: av号
    2. _message_: 你想回复的信息内容

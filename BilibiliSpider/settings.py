@@ -45,7 +45,8 @@ DOWNLOADER_MIDDLEWARES = {
 # 扩展
 EXTENSIONS = {
     'BilibiliSpider.extensions.GetRemotePasswordExtension': 200,            # get远程连接密码
-    'BilibiliSpider.extensions.ParseOnlineExtension': 300                   # 在线人数抓取
+    'BilibiliSpider.extensions.ParseOnlineExtension': 300,                  # 在线人数抓取
+    'BilibiliSpider.extensions.BQuickReplyOnBangumi': 400                   # 在线人数抓取
 }
 
 ITEM_PIPELINES = {
@@ -132,12 +133,19 @@ PARSE_CHILD_COMMENTS_MAX_PAGES = 50     # 子评论爬取页数
 COOKIES_FROM_FILE = True
 
 # 为False将接受以下参数
-# 可以接受字符形式的原始cookie数据
+# 可以接受字符形式的原始cookie数据, cookie最好取自自己动态页面的cookie
 COOKIES_STRING = """
 
 """
-
 # 也可接受字典形式的cookie数据
 COOKIES_DICT = {
 
 }
+# 你的b站登录用户id号, 不填将可能无法使用番剧功能
+DEDE_USER_ID = "5281936"
+
+# 每30s刷新一次番剧动态, 可修改
+FLUSH_FREQUENCY = 30
+
+# 如何在番剧上抢楼
+# 在redis-cli中发送hset bilibili:message 番剧名 消息主体即可

@@ -7,6 +7,8 @@ from scrapy import signals
 from pydispatch import dispatcher
 from scrapy_redis.spiders import RedisSpider
 from selenium.webdriver import ChromeOptions
+from time import time
+from redis import StrictRedis
 # from requests.utils import cookiejar_from_dict
 
 from ..mixins import *
@@ -57,13 +59,13 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         'online': 'https://api.bilibili.com/x/web-interface/online',                                       # online人数
         'blackroom': 'https://api.bilibili.com/x/v2/reply?pn=2&type=6&oid={id}',                           # 小黑屋
         'postreply': 'https://api.bilibili.com/x/v2/reply/add',                                            # 发表评论
-        'dynamic': 'https://api.vc.bilibili.com/dynamic_svr/v1/dynamic_svr/dynamic_new?uid={id}&type=8'    # 获取动态
+        'getreply': 'https://api.bilibili.com/x/v2/reply?oid={id}&message={message}',                      # 发表评论的get方式映射
+        'dynamic': 'https://api.vc.bilibili.com/dynamic_svr/v1/dynamic_svr/dynamic_new?uid={id}&type=8',   # 获取关注者动态
+        'bangumi': 'https://api.vc.bilibili.com/dynamic_svr/v1/dynamic_svr/dynamic_new?uid={id}&type=512', # 获取番剧动态
     }
 
     def __init__(self, *args, **kwargs):
-        # self.browser = Chrome(executable_path="F:\ChromeDriver\chromedriver.exe", chrome_options=self.chrome_options)
-        # browser.find_element_by_xpath("//input[@id='login-username']").send_keys("")
-        # browser.find_element_by_xpath("//input[@id='login-passwd']").send_keys("")
+        self.now = time()
         self.mapping = {}
         with open('BilibiliSpider/map/tag.json', 'r', encoding='utf8') as f:
             self.mapping = json.load(f)
@@ -71,37 +73,56 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         self.partial = iter if PARSE_DETAIL_ORDER_ASC else reversed
         self.cookies = self.get_cookies()
         self.csrf = self.cookies.get('bili_jct', "")  # 填写登录后的cookie bili_jct, 用作post时的csrf字段
-        dispatcher.connect(self.handle_spider_closed, signals.spider_closed)
+        self.conn = StrictRedis(host=REDIS_HOST, port=REDIS_PORT, password=REDIS_PARAMS['password'])
         super(BilibiliSpider, self).__init__(*args, **kwargs)
+        dispatcher.connect(self.handle_spider_closed, signals.spider_closed)
+
+    @classmethod
+    def from_crawler(cls, crawler, *args, **kwargs):
+        spider = super().from_crawler(crawler, *args, **kwargs)
+        spider.message_key = spider.settings.get("MESSAGE_KEY", spider.name + ':message')
+        user_id = spider.settings.get("DedeUserID", None)
+        if user_id:
+            spider.cookies.update({"DedeUserID": DEDE_USER_ID})     # 番剧海景房功能cookie必填字段
+        return spider
 
     def parse(self, response):
         """选择一个解析函数"""
         parse_res = urlparse(response.url)
+        # 番剧海景房规则匹配
+        if parse_res.query.split('&')[-1].split('=')[-1] == "512":
+            cookies = self.cookies.copy()
+            cookies.update({"l": "v"})
+            yield scrapy.Request(url=response.url,
+                                 callback=self.parse_bangumi,
+                                 cookies=cookies,
+                                 dont_filter=True)
+        # 视频解析规则匹配
         result = re.match(self.reg_pattern['video'], parse_res.path, re.I)
         if result:
             response.meta['video_id'] = result.group(1)
             return self.parse_detail(response)
-
+        # 用户解析规则匹配
         if parse_res.netloc == self.allowed_domains[1]:
             result = re.match(self.reg_pattern['user'], parse_res.path, re.I)
             if result:
                 response.meta['user_id'] = result.group(1)
                 return self.parse_person(response)
-
+        # 文章解析规则匹配
         result = re.match(self.reg_pattern['article'], parse_res.path, re.I)
         if result:
             response.meta['article_id'] = result.group(1)
             return self.parse_article(response)
-
+        # 标签解析规则匹配
         result = re.match(self.reg_pattern['tag'], parse_res.path, re.I)
         if result:
             response.meta['tag_id'] = result.group(1)
             return self.parse_tags(response)
-
+        # 在线人数解析规则匹配
         if re.match(self.reg_pattern['online'], parse_res.path, re.I) \
                 and parse_res.netloc == self.allowed_domains[2]:
             return self.parse_online(response)
-
+        # 发送回复解析规则匹配
         if re.match(self.reg_pattern['reply'], parse_res.path):
             return self.reply(response)
         return []
@@ -182,7 +203,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         stats = decode_data['stats']
         item = response.meta.get('item')
         item['cover_img_url'] = decode_data.get('banner_url', "")
-        item['img_box'] = decode_data.get('image_urls', [])
+        item['img_box'] = ','.join(decode_data.get('image_urls', []))
         item['author'] = decode_data.get('author_name', "")
         item['title'] = decode_data.get('title', "")
         item['views'] = stats.get('view', 0)
@@ -298,7 +319,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         if decode_data['status']:
             person_loader = DefaultItemLoader(PersonItem(), response=response)
             person_loader.add_value('name', decode_data.get('name'))
-            person_loader.add_value('gender', decode_data.get('gender'))
+            person_loader.add_value('gender', decode_data.get('sex'))
             person_loader.add_value('sign', decode_data.get('sign'))
             person_loader.add_value('uid', decode_data.get('mid'))
             person_loader.add_value('level', decode_data['level_info'].get('current_level', 0))
@@ -343,7 +364,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         """user关注tag标签信息"""
         decode_data = self.decode_data(response.text)
         person_item = response.meta['person_item']
-        person_item['tags'] = ','.join([tag.get('name', "") for tag in decode_data.get('tags', {})])
+        person_item['tags'] = ",".join([tag.get('name', "") for tag in decode_data.get('tags', {})])
         yield person_item
 
     def parse_tags(self, response):
@@ -386,6 +407,29 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         item['current_time'] = datetime.now()
         yield item
 
+    def parse_bangumi(self, response):
+        """获取番剧动态"""
+        decode_data = self.decode_data(response.text)
+        card_list = decode_data.get('cards')
+        # card根据时间戳从大到小
+        for card in card_list:
+            if card['desc'].get('timestamp', 0) > self.now:
+                yield from self.send_message(card['card'])
+            else:
+                # 发送完所有请求后, 更新最新时间
+                self.now = time()
+                break
+
+    def send_message(self, card):
+        """发送消息"""
+        data = json.loads(card)
+        title = data['title']
+        message = self.conn.hget(self.message_key, title)
+        if message:
+            yield scrapy.Request(url=self.api_urls.get('getreply').
+                                 format(id=video_id, message=message),
+                                 dont_filter=True)
+
     def check_status(self, response):
         """检查post回复的状态"""
         root_data = json.loads(response.text)
@@ -423,4 +467,3 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
     def handle_spider_closed(self, spider, reason):
         """爬虫结束信号处理"""
         spider.logger.info(self.crawler.stats)
-
