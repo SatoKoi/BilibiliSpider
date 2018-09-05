@@ -79,14 +79,14 @@ if __name__ == '__main__':
     logger_one.add_file_handler("transfer_failure.log", level=logging.ERROR)
     logger_two.add_stream_handler()
     logger_two.add_file_handler("transfer_success.log", level=logging.INFO)
-    pool = ConnectionPool(host='47.106.72.198',
-                          password='5762360f',
+    pool = ConnectionPool(host='',
+                          password='',
                           db=0,
                           port=6379
                           )
     conn = StrictRedis(connection_pool=pool)
-    mysql = pymysql.connect(host='47.106.72.198',
-                            password='13786836697qwe',
+    mysql = pymysql.connect(host='',
+                            password='',
                             port=3306,
                             user='root',
                             db='bilibili',
