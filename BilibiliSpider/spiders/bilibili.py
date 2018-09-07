@@ -72,6 +72,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         self.reg_pattern = REG_PATTERN
         self.partial = iter if PARSE_DETAIL_ORDER_ASC else reversed
         self.cookies = self.get_cookies()
+        self.cookies.update({"DedeUserID": DEDE_USER_ID})
         self.csrf = self.cookies.get('bili_jct', "")  # 填写登录后的cookie bili_jct, 用作post时的csrf字段
         self.conn = StrictRedis(host=REDIS_HOST, port=REDIS_PORT, password=REDIS_PARAMS['password'])
         super(BilibiliSpider, self).__init__(*args, **kwargs)
@@ -81,9 +82,6 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
     def from_crawler(cls, crawler, *args, **kwargs):
         spider = super().from_crawler(crawler, *args, **kwargs)
         spider.message_key = spider.settings.get("MESSAGE_KEY", spider.name + ':message')
-        user_id = spider.settings.get("DedeUserID", None)
-        if user_id:
-            spider.cookies.update({"DedeUserID": DEDE_USER_ID})     # 番剧海景房功能cookie必填字段
         return spider
 
     def parse(self, response):
@@ -93,10 +91,7 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         if parse_res.query.split('&')[-1].split('=')[-1] == "512":
             cookies = self.cookies.copy()
             cookies.update({"l": "v"})
-            yield scrapy.Request(url=response.url,
-                                 callback=self.parse_bangumi,
-                                 cookies=cookies,
-                                 dont_filter=True)
+            return self.send_message(response, cookies)
         # 视频解析规则匹配
         result = re.match(self.reg_pattern['video'], parse_res.path, re.I)
         if result:
@@ -407,6 +402,13 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         item['current_time'] = datetime.now()
         yield item
 
+    def send_message(self, response, cookies):
+        yield scrapy.Request(url=response.url,
+                             callback=self.parse_bangumi,
+                             cookies=cookies,
+                             dont_filter=True
+                             )
+
     def parse_bangumi(self, response):
         """获取番剧动态"""
         decode_data = self.decode_data(response.text)
@@ -414,21 +416,20 @@ class BilibiliSpider(GetCookieMixin, ReplyMixin, RedisSpider):
         # card根据时间戳从大到小
         for card in card_list:
             if card['desc'].get('timestamp', 0) > self.now:
-                yield from self.send_message(card['card'])
+                yield from self._send_message(card['card'])
             else:
                 # 发送完所有请求后, 更新最新时间
                 self.now = time()
                 break
 
-    def send_message(self, card):
+    def _send_message(self, card):
         """发送消息"""
         data = json.loads(card)
         title = data['title']
         message = self.conn.hget(self.message_key, title)
         if message:
             yield scrapy.Request(url=self.api_urls.get('getreply').
-                                 format(id=video_id, message=message),
-                                 dont_filter=True)
+                                 format(id=video_id, message=message))
 
     def check_status(self, response):
         """检查post回复的状态"""

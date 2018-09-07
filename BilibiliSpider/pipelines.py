@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import os
 import pymysql
 import hashlib
@@ -22,6 +17,7 @@ from scrapy.exporters import JsonItemExporter
 from scrapy_redis.pipelines import RedisPipeline
 from scrapy_redis import connection, defaults
 from scrapy.utils.serialize import ScrapyJSONEncoder
+from threading import Lock
 from .settings import JSON_EXPORT_LOCATION, IMAGES_DIRECTORY_NAME, SQL_DATETIME_FORMAT
 from .items import *
 
@@ -180,6 +176,7 @@ class RedisPipeline(RedisPipeline):
                                             key=key,
                                             serialize_func=serialize_func
                                             )
+        self.lock = Lock()
         self.items = items
 
     @classmethod
@@ -198,9 +195,10 @@ class RedisPipeline(RedisPipeline):
 
     def process_item(self, item, spider):
         for i in self.items:
-            if isinstance(item, eval(i)):
-                spider.key = i
-                return deferToThread(self._process_item, item, spider)
+            with self.lock:
+                if isinstance(item, eval(i)):
+                    spider.key = i
+                    return deferToThread(self._process_item, item, spider)
         return item
 
     def item_key(self, item, spider):
