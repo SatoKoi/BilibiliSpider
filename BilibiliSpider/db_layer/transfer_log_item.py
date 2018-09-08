@@ -33,25 +33,18 @@ class LogTransfer(object):
 
     def _parse_raw_text(self, cursor, data):
         for item in self.items:
-            if re.search(item, data, re.I):
-                result = re.search(r'({.*})', data)
+            item_cls = eval(item)
+            key = getattr(item_cls, "primary_key")
+            result = re.search(r'({.*})', data)
+            if re.search(key, result.group(1), re.I):
                 decode_data = eval(result.group(1))
-                item_cls = eval(item)
                 try:
                     data = item_cls(decode_data)
                 except Exception as e:
-                    for _item in self.items:
-                        try:
-                            item_cls = eval(_item)
-                            data = item_cls(decode_data)
-                            self._transfer(cursor, item, data)
-                            return
-                        except:
-                            pass
                     self.handle_exception(item, data, e)
                 else:
                     self._transfer(cursor, item, data)
-                    return
+                    break
 
     def _transfer(self, cursor, item, data):
         insert_sql, params = data.get_insert_sql()
@@ -76,15 +69,15 @@ if __name__ == '__main__':
     logger_one.add_file_handler("transfer_log_failure.log", level=logging.ERROR)
     logger_two.add_stream_handler()
     logger_two.add_file_handler("transfer_log_success.log", level=logging.INFO)
-    mysql = pymysql.connect(host='47.106.72.198',
-                            password='13786836697qwe',
+    mysql = pymysql.connect(host='',
+                            password='',
                             port=3306,
                             user='root',
                             db='bilibili',
                             charset='utf8mb4',
                             autocommit=True
                             )
-    items = ('TagItem', 'CategoryItem', 'VideoItem', 'ArticleItem', 'CommentItem', 'PersonItem')
+    items = ('TagItem', 'VideoItem', 'ArticleItem', 'CommentItem', 'PersonItem')
     lock = Lock()
     transfer = LogTransfer(mysql, (logger_one.logger, logger_two.logger), items, './transfer_failure.log')
     transfer.parse_log_file()
