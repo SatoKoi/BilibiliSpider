@@ -14,8 +14,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework.documentation import include_docs_urls
+from rest_framework.routers import DefaultRouter
+
+from Bili.views import *
+
+import xadmin
+
+
+router = DefaultRouter()
+router.register(r'user', PersonViewset, base_name="user")
+router.register(r'video', VideoViewset, base_name="video")
+router.register(r'article', ArticleViewset, base_name="article")
+router.register(r'category', CategoryViewset, base_name="category")
+router.register(r'tags', TagViewset, base_name="tags")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
+    path('xadmin/', xadmin.site.urls),
+    path(r'docs/', include_docs_urls(title="B站爬虫数据接口")),
+    path(r'', include(router.urls))
 ]
