@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import pprint
+from datetime import date, datetime
 from collections import Sized
-from datetime import datetime, date
 
 
 class DictItem(object):
@@ -42,6 +42,8 @@ class DictItem(object):
 
 
 class TagItem(DictItem):
+    primary_key = "tag_id"
+
     def get_insert_sql(self):
         insert_sql = """
             insert into Bili_tag(`tag_id`,`cover_url`, `name`, `content`, `likes`, `publish_time`, `publish_nums`)
@@ -55,6 +57,8 @@ class TagItem(DictItem):
 
 
 class VideoItem(DictItem):
+    primary_key = "vid"
+
     def get_insert_sql(self):
         insert_sql = """
             insert into Bili_video(`vid`, `author`, `title`, `desc`, `url`, `play_nums`, `danmu_nums`, 
@@ -73,6 +77,8 @@ class VideoItem(DictItem):
 
 
 class ArticleItem(DictItem):
+    primary_key = "cid"
+
     def get_insert_sql(self):
         insert_sql = """
             insert into Bili_article(`cid`, `author`, `cover_img_url`, `title`, `desc`, `url`, `img_box`, `views`, 
@@ -92,6 +98,8 @@ class ArticleItem(DictItem):
 
 
 class CommentItem(DictItem):
+    primary_key = "sid"
+
     def get_insert_sql(self):
         insert_sql = """
             insert into Bili_comment(`sid`, `source`, `person`, `desc`, `likes`, `plat_from`, 
@@ -106,6 +114,8 @@ class CommentItem(DictItem):
 
 
 class PersonItem(DictItem):
+    primary_key = "uid"
+
     def get_insert_sql(self):
         insert_sql = """
            insert into Bili_person(`name`, `gender`, `sign`, `uid`, `level`, `birthday`, `avatar`, 
