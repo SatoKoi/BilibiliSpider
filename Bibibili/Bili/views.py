@@ -61,11 +61,11 @@ class CommentViewset(ListModelMixin, GenericViewSet):
     queryset = Comment.objects.all().order_by('id')
     serializer_class = CommentSerializer
     pagination_class = BasePagination
-    search_fields = ('sid', 'person', 'desc', 'reply_person')
-    ordering_fields = ('sid', 'likes', 'floor', 'is_main', 'publish_time')
+    search_fields = ('id', 'sid', 'person', 'desc', 'reply_person')
+    ordering_fields = ('id', 'sid', 'likes', 'floor', 'is_main', 'publish_time')
 
     filter_backends = (DjangoFilterBackend, SearchFilter, OrderingFilter)
-    filter_fields = ('sid', 'person', 'desc', 'reply_person')
+    filter_fields = ('id', 'sid', 'person', 'desc', 'reply_person')
 
 
 class CategoryViewset(ListModelMixin, GenericViewSet):

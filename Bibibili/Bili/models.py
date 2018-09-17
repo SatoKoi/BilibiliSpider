@@ -188,7 +188,7 @@ class Comment(Model):
     # person = models.ForeignKey(PersonModel, on_delete=models.CASCADE, verbose_name="评论用户", related_name="person")
     person = models.CharField(verbose_name="评论用户", help_text="评论用户", max_length=30)
     desc = models.TextField(verbose_name="内容", help_text="内容")
-    likes = models.IntegerField(verbose_name="点赞数", help_text="点赞数", default=0)
+    likes = models.IntegerField(verbose_name="点赞数", help_text="点赞数", default=0, db_index=True)
     plat_from = models.CharField(verbose_name="平台", help_text="平台", default="PC端", max_length=30)
     # reply_person = models.ForeignKey(PersonModel, on_delete=models.CASCADE, verbose_name="被回复用户", related_name="reply_person")
     reply_person = models.CharField(verbose_name="被回复用户", help_text="被回复用户", max_length=30, null=True)
