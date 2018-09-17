@@ -27,6 +27,7 @@ router = DefaultRouter()
 router.register(r'user', PersonViewset, base_name="user")
 router.register(r'video', VideoViewset, base_name="video")
 router.register(r'article', ArticleViewset, base_name="article")
+router.register(r'comment', CommentViewset, base_name="comment")
 router.register(r'category', CategoryViewset, base_name="category")
 router.register(r'tags', TagViewset, base_name="tags")
 

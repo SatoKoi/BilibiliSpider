@@ -56,6 +56,18 @@ class ArticleViewset(ListModelMixin, GenericViewSet):
     filter_fields = ('author', 'cid', 'title', 'desc')
 
 
+class CommentViewset(ListModelMixin, GenericViewSet):
+    throttle_classes = (UserRateThrottle, AnonRateThrottle)
+    queryset = Comment.objects.all().order_by('id')
+    serializer_class = CommentSerializer
+    pagination_class = BasePagination
+    search_fields = ('sid', 'person', 'desc', 'reply_person')
+    ordering_fields = ('sid', 'likes', 'floor', 'is_main', 'publish_time')
+
+    filter_backends = (DjangoFilterBackend, SearchFilter, OrderingFilter)
+    filter_fields = ('sid', 'person', 'desc', 'reply_person')
+
+
 class CategoryViewset(ListModelMixin, GenericViewSet):
     throttle_classes = (UserRateThrottle, AnonRateThrottle)
     queryset = Category.objects.all().order_by('id')
