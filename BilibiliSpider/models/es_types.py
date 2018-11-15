@@ -18,11 +18,8 @@ class CustomAnalyzer(_CustomAnalyzer):
 ik_analyzer = CustomAnalyzer("ik_max_word", filter=['lowercase'])  # 分词分析器
 
 
-class SuggestField(object):
+class ArticleDocType(DocType):
     suggest = Completion(analyzer=ik_analyzer)
-
-
-class ArticleDocType(SuggestField, DocType):
     cid = Integer()
     author = Text(analyzer="ik_max_word")
     cover_img_url = Keyword()
@@ -39,8 +36,13 @@ class ArticleDocType(SuggestField, DocType):
     category = Text(analyzer="ik_max_word")
     tags = Text(analyzer="ik_max_word")
 
+    class Meta:
+        index = "bilibili_article"
+        doc_type = "main"
 
-class VideoDocType(SuggestField, DocType):
+
+class VideoDocType(DocType):
+    suggest = Completion(analyzer=ik_analyzer)
     vid = Integer()
     author = Text(analyzer="ik_max_word")
     title = Text(analyzer="ik_max_word")
@@ -57,8 +59,13 @@ class VideoDocType(SuggestField, DocType):
     category = Text(analyzer="ik_max_word")
     tags = Text(analyzer="ik_max_word")
 
+    class Meta:
+        index = "bilibili_video"
+        doc_type = "main"
 
-class CommentDocType(SuggestField, DocType):
+
+class CommentDocType(DocType):
+    suggest = Completion(analyzer=ik_analyzer)
     sid = Integer()
     source = Keyword()
     person = Text(analyzer="ik_max_word")
@@ -68,8 +75,13 @@ class CommentDocType(SuggestField, DocType):
     floor = Integer()
     publish_time = Date()
 
+    class Meta:
+        index = "bilibili_comment"
+        doc_type = "main"
 
-class TagDocType(SuggestField, DocType):
+
+class TagDocType(DocType):
+    suggest = Completion(analyzer=ik_analyzer)
     tag_id = Integer()
     cover_url = Keyword()
     name = Text(analyzer="ik_max_word")
@@ -78,8 +90,13 @@ class TagDocType(SuggestField, DocType):
     publish_time = Date()
     publish_nums = Integer()
 
+    class Meta:
+        index = "bilibili_tag"
+        doc_type = "main"
 
-class PersonDocType(SuggestField, DocType):
+
+class PersonDocType(DocType):
+    suggest = Completion(analyzer=ik_analyzer)
     name = Text(analyzer="ik_max_word")
     sign = Text(analyzer="ik_max_word")
     uid = Integer()
@@ -90,6 +107,10 @@ class PersonDocType(SuggestField, DocType):
     play_nums = Integer()
     register_time = Date()
     tags = Text(analyzer="ik_max_word")
+
+    class Meta:
+        index = "bilibili_person"
+        doc_type = "main"
 
 
 if __name__ == '__main__':
