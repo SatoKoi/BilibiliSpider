@@ -54,6 +54,7 @@ ITEM_PIPELINES = {
     # 'BilibiliSpider.pipelines.MysqlTwistPipeline': 200,               # mysql异步管道
     # 'BilibiliSpider.pipelines.MysqlPipeline': 200,                    # mysql同步管道
     # 'BilibiliSpider.pipelines.JsonExporterPipeline': 250              # json管道
+    # 'BilibiliSpider.pipelines.ElasticSearchPipeline' : 400            # elastice-search 管道
 }
 
 # 并发设置

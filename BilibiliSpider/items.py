@@ -8,7 +8,12 @@
 import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import TakeFirst, MapCompose, Join
+from elasticsearch_dsl import connections
+from BilibiliSpider.models import ArticleDocType, TagDocType, CommentDocType, VideoDocType, PersonDocType
 from BilibiliSpider.utils.metrics import *
+
+# 创建es连接
+es = connections.create_connection(ArticleDocType._doc_type.using)
 
 
 class DefaultItemLoader(ItemLoader):
@@ -39,6 +44,18 @@ class TagItem(scrapy.Item):
         values = (self.get('tag_id'), self.get('cover_url'), self.get('name'), self.get('content'),
                   self.get('likes'), self.get('publish_time'), self.get('publish_nums'))
         return insert_sql, values
+
+    def save_to_es(self):
+        tag = TagDocType()
+        tag.suggest = gen_suggests(TagDocType._doc_type.index, ((tag.name, 10), (tag.content, 8)))
+        tag.tag_id = self.get('tag_id')
+        tag.cover_url = self.get('cover_url', "")
+        tag.name = self.get('name')
+        tag.content = self.get('content')
+        tag.likes = self.get('likes')
+        tag.publish_time = self.get('publish_time')
+        tag.publish_nums = self.get('publish_nums')
+        tag.save()
 
 
 class CategoryItem(scrapy.Item):
@@ -100,7 +117,7 @@ class VideoItem(scrapy.Item):
     shares = scrapy.Field()
     publish_time = scrapy.Field(input_processor=MapCompose(get_datetime))
     category = scrapy.Field(
-        input_processor=Filter(slice(-1, None)),     # 取从第二个位置开始往后的元素
+        input_processor=Filter(slice(-1, None)),  # 取从第二个位置开始往后的元素
         output_processor=Join(',')
     )
     tags = scrapy.Field(output_processor=Join(','))
@@ -120,6 +137,30 @@ class VideoItem(scrapy.Item):
                   self.get('danmu_nums'), self.get('comments'), self.get('coins'), self.get('collections'),
                   self.get('likes'), self.get('shares'), self.get('publish_time'), self.get('category'), self.get('tags'))
         return insert_sql, values
+
+    def save_to_es(self):
+        video = VideoDocType()
+        video.vid = self.get('vid')
+        video.author = self.get('author')
+        video.title = self.get('title')
+        video.desc = self.get('desc')
+        video.url = self.get('url')
+        video.play_nums = self.get('play_nums')
+        video.danmu_nums = self.get('danmu_nums')
+        video.comments = self.get('comments')
+        video.coins = self.get('coins')
+        video.collections = self.get('collections')
+        video.likes = self.get('likes')
+        video.shares = self.get('shares')
+        video.publish_time = self.get('publish_time')
+        video.category = self.get('category')
+        video.tags = self.get('tags')
+        video.suggest = gen_suggests(video._doc_type.index, ((video.title, 10),
+                                                             (video.desc, 8),
+                                                             (video.category, 6),
+                                                             (video.tags, 4),
+                                                             (video.author, 3)))
+        video.save()
 
 
 class ArticleItem(scrapy.Item):
@@ -180,6 +221,29 @@ class ArticleItem(scrapy.Item):
                   self.get('likes'), self.get('shares'), self.get('publish_time'), self.get('category'), self.get('tags'))
         return insert_sql, values
 
+    def save_to_es(self):
+        article = ArticleDocType()
+        article.cid = self.get('cid')
+        article.author = self.get('author')
+        article.title = self.get('title')
+        article.desc = self.get('desc')
+        article.url = self.get('url')
+        article.views = self.get('views')
+        article.comments = self.get('comments')
+        article.coins = self.get('coins')
+        article.collections = self.get('collections')
+        article.likes = self.get('likes')
+        article.shares = self.get('shares')
+        article.publish_time = self.get('publish_time')
+        article.category = self.get('category')
+        article.tags = self.get('tags')
+        article.suggest = gen_suggests(article._doc_type.index, ((article.title, 10),
+                                                                 (article.desc, 8),
+                                                                 (article.category, 6),
+                                                                 (article.tags, 4),
+                                                                 (article.author, 3)))
+        article.save()
+
 
 class CommentItem(scrapy.Item):
     """ 评论
@@ -216,6 +280,19 @@ class CommentItem(scrapy.Item):
         values = (self.get('sid'), self.get('source'), self.get('person'), self.get('desc'), self.get('likes'), self.get('plat_from'),
                   self.get('reply_person', ""), self.get('floor'), self.get('is_main'), self.get('publish_time'), self.get('type'))
         return insert_sql, values
+
+    def save_to_es(self):
+        comment = CommentDocType()
+        comment.sid = self.get('sid')
+        comment.source = self.get('source')
+        comment.person = self.get('person')
+        comment.desc = self.get('desc')
+        comment.likes = self.get('likes')
+        comment.reply_person = self.get('reply_person')
+        comment.floor = self.get('floor')
+        comment.publish_time = self.get('publish_time')
+        comment.suggest = gen_suggests(comment._doc_type.index, ((comment.desc, 10), (comment.person, 7), (comment.reply_person, 5)))
+        comment.save()
 
 
 class PersonItem(scrapy.Item):
@@ -262,9 +339,46 @@ class PersonItem(scrapy.Item):
                   self.get('register_time'), self.get('member_level'), self.get('tags'))
         return insert_sql, values
 
+    def save_to_es(self):
+        person = PersonDocType()
+        person.name = self.get("name")
+        person.sign = self.get("sign")
+        person.uid = self.get("uid")
+        person.birthday = self.get("birthday")
+        person.avatar = self.get("avatar")
+        person.attention_nums = self.get("attention_nums")
+        person.fans_nums = self.get("fans_nums")
+        person.play_nums = self.get("play_nums")
+        person.register_time = self.get("register_time")
+        person.tags = self.get("tags")
+        person.suggest = gen_suggests(person._doc_type.index, ((person.name, 10), (person.sign, 7), (person.uid, 4), (person.tags, 2)))
+
 
 class OnlineItem(scrapy.Item):
     all_count = scrapy.Field()
     web_online = scrapy.Field()
     play_online = scrapy.Field()
     current_time = scrapy.Field()
+
+
+def gen_suggests(index, info_tuple):
+    """根据字符串生成搜索建议数组(ES)
+    :param index: ElasticSearch索引
+    :param info_tuple: 信息权重元组
+    """
+    used_words = set()
+    suggests = []
+    for text, weight in info_tuple:
+        if text:
+            # 调用es的analyzer接口分析字符串, words拿到分析得到的token
+            words = es.indices.analyze(index=index, params={'analyzer': 'ik_max_word', 'filter': ["lowercase"]}, body=text)
+            # 从token中得到所有由analyzer分析得到的分词
+            analyzed_words = set([r["token"] for r in words["tokens"] if len(r['token']) > 1])
+            # 得到所有未使用的分词
+            new_words = analyzed_words - used_words  # 差集
+        else:
+            new_words = set()
+
+        if new_words:
+            suggests.append({"input": list(new_words), "weight": weight})
+    return suggests

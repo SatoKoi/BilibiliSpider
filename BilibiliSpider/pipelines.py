@@ -263,3 +263,11 @@ class GeneralImagePipeline(ImagesPipeline):
 
         image_guid = hashlib.sha1(to_bytes(url)).hexdigest()
         return '{}/{}'.format(self.image_directory_name, image_guid)
+
+
+class ElasticSearchPipeline(object):
+    """Elasticsearch数据处理管道"""
+    def process_item(self, item, spider):
+        if hasattr(item, "save_to_es"):
+            item.save_to_es()
+        return item

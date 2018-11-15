@@ -22,7 +22,7 @@ class SuggestField(object):
     suggest = Completion(analyzer=ik_analyzer)
 
 
-class ActicleDocType(SuggestField, DocType):
+class ArticleDocType(SuggestField, DocType):
     cid = Integer()
     author = Text(analyzer="ik_max_word")
     cover_img_url = Keyword()
@@ -93,7 +93,7 @@ class PersonDocType(SuggestField, DocType):
 
 
 if __name__ == '__main__':
-    ActicleDocType.init()
+    ArticleDocType.init()
     VideoDocType.init()
     CommentDocType.init()
     TagDocType.init()
