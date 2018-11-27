@@ -9,7 +9,7 @@ cssselect==1.0.3
 docker-py==1.10.6
 docker-pycreds==0.3.0
 EasyProcess==0.2.3
-fake-useragent==0.1.8
+fake-useragent>=0.1.8
 hyperlink==18.0.0
 idna==2.6
 idna-ssl==1.1.0
