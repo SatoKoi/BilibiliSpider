@@ -47,4 +47,4 @@ w3lib==1.19.0
 websocket-client==0.48.0
 yarl==1.2.6
 zope.interface==4.4.3
-pillow==5.0.0
+pillow==8.3.2
